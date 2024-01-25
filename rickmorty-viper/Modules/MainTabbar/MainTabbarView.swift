@@ -7,13 +7,6 @@
 
 import UIKit
 
-class MainTabbarView: UITabBarController {
-    var presenter: MainTabbarPresenter?
-    
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        
-        self.viewControllers = MainTabbarRouter().tabbarController()
-    }
+class MainTabbarView: UIView {
 
 }

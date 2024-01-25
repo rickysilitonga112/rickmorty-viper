@@ -9,12 +9,8 @@ import Foundation
 import UIKit
 
 class SettingScreenRouter {
-    func showView() -> SettingScreenView {
-        let storyboardId = String(describing: SettingScreenView.self)
-        let storyboard = UIStoryboard(name: storyboardId, bundle: nil)
-        guard let view = storyboard.instantiateViewController(withIdentifier: storyboardId) as? SettingScreenView else {
-            fatalError("Error loading storyboard")
-        }
+    func showView() -> SettingScreenViewController {
+        let view = SettingScreenViewController()
         let interactor = SettingScreenInteractor()
         let presenter = SettingScreenPresenter(interactor: interactor)
         view.presenter = presenter

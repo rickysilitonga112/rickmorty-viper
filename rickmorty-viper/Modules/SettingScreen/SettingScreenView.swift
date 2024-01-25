@@ -7,11 +7,6 @@
 
 import UIKit
 
-class SettingScreenView: UIViewController {
-    var presenter: SettingScreenPresenter?
-    override func viewDidLoad() {
-        super.viewDidLoad()
-
-    }
-
+class SettingScreenView: UIView {
+    
 }

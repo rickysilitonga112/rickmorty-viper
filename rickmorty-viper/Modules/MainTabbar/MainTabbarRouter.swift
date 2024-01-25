@@ -8,12 +8,8 @@
 import UIKit
 
 class MainTabbarRouter {
-    func showView() -> MainTabbarView {
-        let storyBoardId = String(describing: MainTabbarView.self)
-        let storyBoard = UIStoryboard(name: storyBoardId, bundle: nil)
-        guard let view = storyBoard.instantiateViewController(withIdentifier: storyBoardId) as? MainTabbarView else {
-            fatalError("Error loading storyboard")
-        }
+    func showView() -> MainTabbarViewController {
+        let view = MainTabbarViewController()
         let interactor = MainTabbarInteractor()
         let presenter = MainTabbarPresenter(interactor: interactor)
         view.presenter = presenter
@@ -23,8 +19,8 @@ class MainTabbarRouter {
     func navigateToCharacter() -> UINavigationController {
         let view = UINavigationController(rootViewController: CharacterScreenRouter().showView())
         view.tabBarItem = UITabBarItem(title: "Character",
-                                                image: UIImage(systemName: "person"),
-                                                tag: 0
+                                       image: UIImage(systemName: "person"),
+                                       tag: 0
         )
         view.navigationBar.prefersLargeTitles = true
         view.navigationItem.largeTitleDisplayMode = .automatic
@@ -34,8 +30,8 @@ class MainTabbarRouter {
     func navigateToEpisode() -> UINavigationController {
         let view = UINavigationController(rootViewController: EpisodeScreenRouter().showView())
         view.tabBarItem = UITabBarItem(title: "Episode",
-                                                image: UIImage(systemName: "tv"),
-                                                tag: 1
+                                       image: UIImage(systemName: "tv"),
+                                       tag: 1
         )
         view.navigationBar.prefersLargeTitles = true
         view.navigationItem.largeTitleDisplayMode = .automatic
@@ -45,8 +41,8 @@ class MainTabbarRouter {
     func navigateToLocation() -> UINavigationController {
         let view = UINavigationController(rootViewController: LocationScreenRouter().showView())
         view.tabBarItem = UITabBarItem(title: "Location",
-                                                image: UIImage(systemName: "globe"),
-                                                tag: 2
+                                       image: UIImage(systemName: "globe"),
+                                       tag: 2
         )
         view.navigationBar.prefersLargeTitles = true
         view.navigationItem.largeTitleDisplayMode = .automatic
@@ -56,8 +52,8 @@ class MainTabbarRouter {
     func navigateToSetting() -> UINavigationController {
         let view = UINavigationController(rootViewController: SettingScreenRouter().showView())
         view.tabBarItem = UITabBarItem(title: "Settings",
-                                                image: UIImage(systemName: "gear"),
-                                                tag: 3
+                                       image: UIImage(systemName: "gear"),
+                                       tag: 3
         )
         view.navigationBar.prefersLargeTitles = true
         view.navigationItem.largeTitleDisplayMode = .automatic

@@ -7,12 +7,7 @@
 
 import UIKit
 
-class EpisodeScreenView: UIViewController {
-    var presenter: EpisodeScreenPresenter?
-    
-    override func viewDidLoad() {
-        super.viewDidLoad()
-       
-    }
+class EpisodeScreenView: UIView {
+
 
 }

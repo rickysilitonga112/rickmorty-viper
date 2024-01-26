@@ -8,8 +8,7 @@
 import UIKit
 
 class EpisodeScreenRouter {
-    func showView() -> EpisodeScreenViewController {
-        let view = EpisodeScreenViewController()
+    func showView() -> EpisodeScreenView {
         let interactor = EpisodeScreenInteractor()
         let presenter = EpisodeScreenPresenter(interactor: interactor)
         let view = EpisodeScreenView.instance(withPresenter: presenter)

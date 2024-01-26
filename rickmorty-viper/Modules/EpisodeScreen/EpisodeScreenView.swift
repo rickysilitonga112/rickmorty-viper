@@ -13,11 +13,12 @@ class EpisodeScreenView: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        navigationItem.title = "Episode"
+        view.backgroundColor = .systemBackground
     }
 
     static func instance(withPresenter presenter: EpisodeScreenPresenter) -> EpisodeScreenView {
-        let storyboardId = "EpisodeScreenView"
+        let storyboardId = String(String(describing: EpisodeScreenView.self))
         let storyboard = UIStoryboard(name: storyboardId, bundle: nil)
         guard let anyView = storyboard.instantiateViewController(withIdentifier: storyboardId) as? EpisodeScreenView else {
             fatalError("Error loading Storyboard")

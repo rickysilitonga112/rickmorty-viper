@@ -15,7 +15,6 @@ class SettingScreenRouter {
         let view = SettingScreenView.instance(withPresenter: presenter)
         return view
     }
-    
     /*
     func pushToSecondVC(using navigation: UINavigationController, with data: AnyEntity) {
         let secondVCRouter = SeconVCRouter.showView(with: data)

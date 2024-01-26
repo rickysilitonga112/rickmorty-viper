@@ -11,16 +11,14 @@ class LocationScreenView: UIViewController {
     
     private var presenter: LocationScreenPresenter?
 
-    /*
-    // Only override draw() if you perform custom drawing.
-    // An empty implementation adversely affects performance during animation.
-    override func draw(_ rect: CGRect) {
-        // Drawing code
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        navigationItem.title = "Location"
+        view.backgroundColor = .systemBackground
     }
-    */
-
+    
     static func instance(withPresenter presenter: LocationScreenPresenter) -> LocationScreenView {
-        let storyboardId = "LocationScreenView"
+        let storyboardId = String(describing: LocationScreenView.self)
         let storyboard = UIStoryboard(name: storyboardId, bundle: nil)
         guard let anyView = storyboard.instantiateViewController(withIdentifier: storyboardId) as? LocationScreenView else {
             fatalError("Error loading Storyboard")

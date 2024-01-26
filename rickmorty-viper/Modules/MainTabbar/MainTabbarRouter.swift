@@ -8,11 +8,10 @@
 import UIKit
 
 class MainTabbarRouter {
-    func showView() -> MainTabbarViewController {
-        let view = MainTabbarViewController()
+    func showView() -> MainTabbarView {
         let interactor = MainTabbarInteractor()
         let presenter = MainTabbarPresenter(interactor: interactor)
-        view.presenter = presenter
+        let view = MainTabbarView.instance(withPresenter: presenter)
         return view
     }
     

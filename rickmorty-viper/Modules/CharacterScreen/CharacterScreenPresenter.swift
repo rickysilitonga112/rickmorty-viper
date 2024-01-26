@@ -1,17 +1,19 @@
-//
-//  CharacterPresenter.swift
+// 
+//  CharacterScreenPresenter.swift
 //  rickmorty-viper
 //
-//  Created by Ricky Silitonga on 25/01/24.
+//  Created by Ricky Silitonga on 26/01/24.
 //
 
-import UIKit
+import Foundation
 
 class CharacterScreenPresenter {
-    private var interactor: CharacterScreenInteractor
-    private var router = CharacterScreenRouter()
+    
+    private let interactor: CharacterScreenInteractor
+    private let router = CharacterScreenRouter()
     
     init(interactor: CharacterScreenInteractor) {
         self.interactor = interactor
     }
+    
 }

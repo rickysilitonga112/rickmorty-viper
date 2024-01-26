@@ -7,20 +7,30 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		561C9ACD2B62B82600E49C7A /* CharacterScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 561C9ACC2B62B82600E49C7A /* CharacterScreenViewController.swift */; };
-		561C9ACF2B62B84600E49C7A /* CharacterScreenView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 561C9ACE2B62B84600E49C7A /* CharacterScreenView.swift */; };
-		561C9AD12B62B8C200E49C7A /* EpisodeScreenView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 561C9AD02B62B8C200E49C7A /* EpisodeScreenView.swift */; };
-		561C9AD32B62B8D200E49C7A /* EpisodeScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 561C9AD22B62B8D200E49C7A /* EpisodeScreenViewController.swift */; };
-		561C9AD52B62B92500E49C7A /* LocationScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 561C9AD42B62B92500E49C7A /* LocationScreenViewController.swift */; };
-		561C9AD72B62B94500E49C7A /* LocationScreenView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 561C9AD62B62B94500E49C7A /* LocationScreenView.swift */; };
-		561C9ADD2B62B99D00E49C7A /* SettingScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 561C9ADC2B62B99D00E49C7A /* SettingScreenViewController.swift */; };
-		561C9ADF2B62B9AC00E49C7A /* SettingScreenView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 561C9ADE2B62B9AC00E49C7A /* SettingScreenView.swift */; };
-		561C9AE12B62BA1300E49C7A /* MainTabbarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 561C9AE02B62BA1300E49C7A /* MainTabbarView.swift */; };
-		561C9AE32B62BA2200E49C7A /* MainTabbarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 561C9AE22B62BA2200E49C7A /* MainTabbarViewController.swift */; };
-		5634B5E02B636ECC00382506 /* CharacterScreenView.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5634B5DF2B636ECC00382506 /* CharacterScreenView.storyboard */; };
-		5634B5E22B636ED500382506 /* EpisodeScreenView.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5634B5E12B636ED500382506 /* EpisodeScreenView.storyboard */; };
-		5634B5E42B636EDE00382506 /* LocationScreenView.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5634B5E32B636EDE00382506 /* LocationScreenView.storyboard */; };
-		5634B5E62B636EE600382506 /* SettingScreenView.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5634B5E52B636EE600382506 /* SettingScreenView.storyboard */; };
+		5634B5B12B63674500382506 /* CharacterScreenPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5634B5AC2B63674500382506 /* CharacterScreenPresenter.swift */; };
+		5634B5B22B63674500382506 /* CharacterScreenRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5634B5AD2B63674500382506 /* CharacterScreenRouter.swift */; };
+		5634B5B32B63674500382506 /* CharacterScreenInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5634B5AE2B63674500382506 /* CharacterScreenInteractor.swift */; };
+		5634B5B42B63674500382506 /* CharacterScreenView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5634B5AF2B63674500382506 /* CharacterScreenView.swift */; };
+		5634B5B52B63674500382506 /* CharacterScreenEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5634B5B02B63674500382506 /* CharacterScreenEntity.swift */; };
+		5634B5B72B63680300382506 /* CharacterScreenView.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5634B5B62B63680300382506 /* CharacterScreenView.storyboard */; };
+		5634B5C02B6368B400382506 /* SettingScreenPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5634B5BB2B6368B400382506 /* SettingScreenPresenter.swift */; };
+		5634B5C12B6368B400382506 /* SettingScreenRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5634B5BC2B6368B400382506 /* SettingScreenRouter.swift */; };
+		5634B5C22B6368B400382506 /* SettingScreenInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5634B5BD2B6368B400382506 /* SettingScreenInteractor.swift */; };
+		5634B5C32B6368B400382506 /* SettingScreenView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5634B5BE2B6368B400382506 /* SettingScreenView.swift */; };
+		5634B5C42B6368B400382506 /* SettingScreenEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5634B5BF2B6368B400382506 /* SettingScreenEntity.swift */; };
+		5634B5CA2B6368C200382506 /* LocationScreenPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5634B5C52B6368C200382506 /* LocationScreenPresenter.swift */; };
+		5634B5CB2B6368C200382506 /* LocationScreenRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5634B5C62B6368C200382506 /* LocationScreenRouter.swift */; };
+		5634B5CC2B6368C200382506 /* LocationScreenInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5634B5C72B6368C200382506 /* LocationScreenInteractor.swift */; };
+		5634B5CD2B6368C200382506 /* LocationScreenView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5634B5C82B6368C200382506 /* LocationScreenView.swift */; };
+		5634B5CE2B6368C200382506 /* LocationScreenEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5634B5C92B6368C200382506 /* LocationScreenEntity.swift */; };
+		5634B5D42B6368CF00382506 /* EpisodeScreenPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5634B5CF2B6368CF00382506 /* EpisodeScreenPresenter.swift */; };
+		5634B5D52B6368CF00382506 /* EpisodeScreenRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5634B5D02B6368CF00382506 /* EpisodeScreenRouter.swift */; };
+		5634B5D62B6368CF00382506 /* EpisodeScreenInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5634B5D12B6368CF00382506 /* EpisodeScreenInteractor.swift */; };
+		5634B5D72B6368CF00382506 /* EpisodeScreenView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5634B5D22B6368CF00382506 /* EpisodeScreenView.swift */; };
+		5634B5D82B6368CF00382506 /* EpisodeScreenEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5634B5D32B6368CF00382506 /* EpisodeScreenEntity.swift */; };
+		5634B5DA2B6368DB00382506 /* EpisodeScreenView.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5634B5D92B6368DB00382506 /* EpisodeScreenView.storyboard */; };
+		5634B5DC2B6368F200382506 /* LocationScreenView.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5634B5DB2B6368F200382506 /* LocationScreenView.storyboard */; };
+		5634B5DE2B63690600382506 /* SettingScreenView.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5634B5DD2B63690600382506 /* SettingScreenView.storyboard */; };
 		567B81082B6271C6005F676D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 567B81072B6271C6005F676D /* AppDelegate.swift */; };
 		567B810A2B6271C6005F676D /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 567B81092B6271C6005F676D /* SceneDelegate.swift */; };
 		567B81112B6271C8005F676D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 567B81102B6271C8005F676D /* Assets.xcassets */; };
@@ -29,39 +39,34 @@
 		567B81282B627310005F676D /* MainTabbarInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 567B81272B627310005F676D /* MainTabbarInteractor.swift */; };
 		567B812A2B627323005F676D /* MainTabbarEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 567B81292B627323005F676D /* MainTabbarEntity.swift */; };
 		567B812C2B627331005F676D /* MainTabbarRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 567B812B2B627331005F676D /* MainTabbarRouter.swift */; };
-		567B813C2B627432005F676D /* CharacterScreenPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 567B813B2B627432005F676D /* CharacterScreenPresenter.swift */; };
-		567B813E2B627489005F676D /* CharacterScreenInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 567B813D2B627489005F676D /* CharacterScreenInteractor.swift */; };
-		567B81402B627498005F676D /* CharacterScreenEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 567B813F2B627498005F676D /* CharacterScreenEntity.swift */; };
-		567B81422B6274AB005F676D /* CharacterScreenRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 567B81412B6274AB005F676D /* CharacterScreenRouter.swift */; };
-		567B81542B62963A005F676D /* EpisodeScreenPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 567B81532B62963A005F676D /* EpisodeScreenPresenter.swift */; };
-		567B81562B62965C005F676D /* EpisodeScreenInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 567B81552B62965C005F676D /* EpisodeScreenInteractor.swift */; };
-		567B81582B62967E005F676D /* EpisodeScreenRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 567B81572B62967E005F676D /* EpisodeScreenRouter.swift */; };
-		567B815E2B62977E005F676D /* LocationScreenPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 567B815D2B62977E005F676D /* LocationScreenPresenter.swift */; };
-		567B81602B629790005F676D /* LocationScreenInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 567B815F2B629790005F676D /* LocationScreenInteractor.swift */; };
-		567B81622B629798005F676D /* LocationScreenEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 567B81612B629798005F676D /* LocationScreenEntity.swift */; };
-		567B81642B62979F005F676D /* LocationScreenRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 567B81632B62979F005F676D /* LocationScreenRouter.swift */; };
-		567B81662B629802005F676D /* EpisodeScreenEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 567B81652B629802005F676D /* EpisodeScreenEntity.swift */; };
-		567B816D2B629873005F676D /* SettingScreenPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 567B816C2B629873005F676D /* SettingScreenPresenter.swift */; };
-		567B816F2B62988E005F676D /* SettingScreenInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 567B816E2B62988E005F676D /* SettingScreenInteractor.swift */; };
-		567B81712B6298A2005F676D /* SettingScreenEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 567B81702B6298A2005F676D /* SettingScreenEntity.swift */; };
-		567B81732B6298B2005F676D /* SettingScreenRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 567B81722B6298B2005F676D /* SettingScreenRouter.swift */; };
+		567B81442B629133005F676D /* MainTabbarView.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 567B81432B629133005F676D /* MainTabbarView.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		561C9ACC2B62B82600E49C7A /* CharacterScreenViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterScreenViewController.swift; sourceTree = "<group>"; };
-		561C9ACE2B62B84600E49C7A /* CharacterScreenView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterScreenView.swift; sourceTree = "<group>"; };
-		561C9AD02B62B8C200E49C7A /* EpisodeScreenView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EpisodeScreenView.swift; sourceTree = "<group>"; };
-		561C9AD22B62B8D200E49C7A /* EpisodeScreenViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EpisodeScreenViewController.swift; sourceTree = "<group>"; };
-		561C9AD42B62B92500E49C7A /* LocationScreenViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationScreenViewController.swift; sourceTree = "<group>"; };
-		561C9AD62B62B94500E49C7A /* LocationScreenView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationScreenView.swift; sourceTree = "<group>"; };
-		561C9ADC2B62B99D00E49C7A /* SettingScreenViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingScreenViewController.swift; sourceTree = "<group>"; };
-		561C9ADE2B62B9AC00E49C7A /* SettingScreenView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingScreenView.swift; sourceTree = "<group>"; };
-		561C9AE02B62BA1300E49C7A /* MainTabbarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabbarView.swift; sourceTree = "<group>"; };
-		561C9AE22B62BA2200E49C7A /* MainTabbarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabbarViewController.swift; sourceTree = "<group>"; };
-		5634B5DF2B636ECC00382506 /* CharacterScreenView.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = CharacterScreenView.storyboard; sourceTree = "<group>"; };
-		5634B5E12B636ED500382506 /* EpisodeScreenView.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = EpisodeScreenView.storyboard; sourceTree = "<group>"; };
-		5634B5E32B636EDE00382506 /* LocationScreenView.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = LocationScreenView.storyboard; sourceTree = "<group>"; };
-		5634B5E52B636EE600382506 /* SettingScreenView.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = SettingScreenView.storyboard; sourceTree = "<group>"; };
+		5634B5AC2B63674500382506 /* CharacterScreenPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterScreenPresenter.swift; sourceTree = "<group>"; };
+		5634B5AD2B63674500382506 /* CharacterScreenRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterScreenRouter.swift; sourceTree = "<group>"; };
+		5634B5AE2B63674500382506 /* CharacterScreenInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterScreenInteractor.swift; sourceTree = "<group>"; };
+		5634B5AF2B63674500382506 /* CharacterScreenView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterScreenView.swift; sourceTree = "<group>"; };
+		5634B5B02B63674500382506 /* CharacterScreenEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterScreenEntity.swift; sourceTree = "<group>"; };
+		5634B5B62B63680300382506 /* CharacterScreenView.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = CharacterScreenView.storyboard; sourceTree = "<group>"; };
+		5634B5BB2B6368B400382506 /* SettingScreenPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingScreenPresenter.swift; sourceTree = "<group>"; };
+		5634B5BC2B6368B400382506 /* SettingScreenRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingScreenRouter.swift; sourceTree = "<group>"; };
+		5634B5BD2B6368B400382506 /* SettingScreenInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingScreenInteractor.swift; sourceTree = "<group>"; };
+		5634B5BE2B6368B400382506 /* SettingScreenView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingScreenView.swift; sourceTree = "<group>"; };
+		5634B5BF2B6368B400382506 /* SettingScreenEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingScreenEntity.swift; sourceTree = "<group>"; };
+		5634B5C52B6368C200382506 /* LocationScreenPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationScreenPresenter.swift; sourceTree = "<group>"; };
+		5634B5C62B6368C200382506 /* LocationScreenRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationScreenRouter.swift; sourceTree = "<group>"; };
+		5634B5C72B6368C200382506 /* LocationScreenInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationScreenInteractor.swift; sourceTree = "<group>"; };
+		5634B5C82B6368C200382506 /* LocationScreenView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationScreenView.swift; sourceTree = "<group>"; };
+		5634B5C92B6368C200382506 /* LocationScreenEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationScreenEntity.swift; sourceTree = "<group>"; };
+		5634B5CF2B6368CF00382506 /* EpisodeScreenPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EpisodeScreenPresenter.swift; sourceTree = "<group>"; };
+		5634B5D02B6368CF00382506 /* EpisodeScreenRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EpisodeScreenRouter.swift; sourceTree = "<group>"; };
+		5634B5D12B6368CF00382506 /* EpisodeScreenInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EpisodeScreenInteractor.swift; sourceTree = "<group>"; };
+		5634B5D22B6368CF00382506 /* EpisodeScreenView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EpisodeScreenView.swift; sourceTree = "<group>"; };
+		5634B5D32B6368CF00382506 /* EpisodeScreenEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EpisodeScreenEntity.swift; sourceTree = "<group>"; };
+		5634B5D92B6368DB00382506 /* EpisodeScreenView.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = EpisodeScreenView.storyboard; sourceTree = "<group>"; };
+		5634B5DB2B6368F200382506 /* LocationScreenView.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = LocationScreenView.storyboard; sourceTree = "<group>"; };
+		5634B5DD2B63690600382506 /* SettingScreenView.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = SettingScreenView.storyboard; sourceTree = "<group>"; };
 		567B81042B6271C6005F676D /* rickmorty-viper.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "rickmorty-viper.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		567B81072B6271C6005F676D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		567B81092B6271C6005F676D /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -72,22 +77,7 @@
 		567B81272B627310005F676D /* MainTabbarInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabbarInteractor.swift; sourceTree = "<group>"; };
 		567B81292B627323005F676D /* MainTabbarEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabbarEntity.swift; sourceTree = "<group>"; };
 		567B812B2B627331005F676D /* MainTabbarRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabbarRouter.swift; sourceTree = "<group>"; };
-		567B813B2B627432005F676D /* CharacterScreenPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterScreenPresenter.swift; sourceTree = "<group>"; };
-		567B813D2B627489005F676D /* CharacterScreenInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterScreenInteractor.swift; sourceTree = "<group>"; };
-		567B813F2B627498005F676D /* CharacterScreenEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterScreenEntity.swift; sourceTree = "<group>"; };
-		567B81412B6274AB005F676D /* CharacterScreenRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterScreenRouter.swift; sourceTree = "<group>"; };
-		567B81532B62963A005F676D /* EpisodeScreenPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EpisodeScreenPresenter.swift; sourceTree = "<group>"; };
-		567B81552B62965C005F676D /* EpisodeScreenInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EpisodeScreenInteractor.swift; sourceTree = "<group>"; };
-		567B81572B62967E005F676D /* EpisodeScreenRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EpisodeScreenRouter.swift; sourceTree = "<group>"; };
-		567B815D2B62977E005F676D /* LocationScreenPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationScreenPresenter.swift; sourceTree = "<group>"; };
-		567B815F2B629790005F676D /* LocationScreenInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationScreenInteractor.swift; sourceTree = "<group>"; };
-		567B81612B629798005F676D /* LocationScreenEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationScreenEntity.swift; sourceTree = "<group>"; };
-		567B81632B62979F005F676D /* LocationScreenRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationScreenRouter.swift; sourceTree = "<group>"; };
-		567B81652B629802005F676D /* EpisodeScreenEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EpisodeScreenEntity.swift; sourceTree = "<group>"; };
-		567B816C2B629873005F676D /* SettingScreenPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingScreenPresenter.swift; sourceTree = "<group>"; };
-		567B816E2B62988E005F676D /* SettingScreenInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingScreenInteractor.swift; sourceTree = "<group>"; };
-		567B81702B6298A2005F676D /* SettingScreenEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingScreenEntity.swift; sourceTree = "<group>"; };
-		567B81722B6298B2005F676D /* SettingScreenRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingScreenRouter.swift; sourceTree = "<group>"; };
+		567B81432B629133005F676D /* MainTabbarView.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = MainTabbarView.storyboard; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -101,6 +91,58 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		5634B5AB2B63673100382506 /* CharacterScreen */ = {
+			isa = PBXGroup;
+			children = (
+				5634B5B62B63680300382506 /* CharacterScreenView.storyboard */,
+				5634B5AF2B63674500382506 /* CharacterScreenView.swift */,
+				5634B5AC2B63674500382506 /* CharacterScreenPresenter.swift */,
+				5634B5AE2B63674500382506 /* CharacterScreenInteractor.swift */,
+				5634B5B02B63674500382506 /* CharacterScreenEntity.swift */,
+				5634B5AD2B63674500382506 /* CharacterScreenRouter.swift */,
+			);
+			path = CharacterScreen;
+			sourceTree = "<group>";
+		};
+		5634B5B82B63687100382506 /* EpisodeScreen */ = {
+			isa = PBXGroup;
+			children = (
+				5634B5D92B6368DB00382506 /* EpisodeScreenView.storyboard */,
+				5634B5D22B6368CF00382506 /* EpisodeScreenView.swift */,
+				5634B5CF2B6368CF00382506 /* EpisodeScreenPresenter.swift */,
+				5634B5D12B6368CF00382506 /* EpisodeScreenInteractor.swift */,
+				5634B5D32B6368CF00382506 /* EpisodeScreenEntity.swift */,
+				5634B5D02B6368CF00382506 /* EpisodeScreenRouter.swift */,
+			);
+			path = EpisodeScreen;
+			sourceTree = "<group>";
+		};
+		5634B5B92B63688800382506 /* LocationScreen */ = {
+			isa = PBXGroup;
+			children = (
+				5634B5DB2B6368F200382506 /* LocationScreenView.storyboard */,
+				5634B5C82B6368C200382506 /* LocationScreenView.swift */,
+				5634B5C52B6368C200382506 /* LocationScreenPresenter.swift */,
+				5634B5C72B6368C200382506 /* LocationScreenInteractor.swift */,
+				5634B5C92B6368C200382506 /* LocationScreenEntity.swift */,
+				5634B5C62B6368C200382506 /* LocationScreenRouter.swift */,
+			);
+			path = LocationScreen;
+			sourceTree = "<group>";
+		};
+		5634B5BA2B63689200382506 /* SettingScreen */ = {
+			isa = PBXGroup;
+			children = (
+				5634B5DD2B63690600382506 /* SettingScreenView.storyboard */,
+				5634B5BE2B6368B400382506 /* SettingScreenView.swift */,
+				5634B5BB2B6368B400382506 /* SettingScreenPresenter.swift */,
+				5634B5BD2B6368B400382506 /* SettingScreenInteractor.swift */,
+				5634B5BF2B6368B400382506 /* SettingScreenEntity.swift */,
+				5634B5BC2B6368B400382506 /* SettingScreenRouter.swift */,
+			);
+			path = SettingScreen;
+			sourceTree = "<group>";
+		};
 		567B80FB2B6271C6005F676D = {
 			isa = PBXGroup;
 			children = (
@@ -134,11 +176,11 @@
 		567B811B2B627263005F676D /* Modules */ = {
 			isa = PBXGroup;
 			children = (
-				567B81362B627414005F676D /* CharacterScreen */,
-				567B814C2B629352005F676D /* EpisodeScreen */,
-				567B814D2B62935A005F676D /* LocationScreen */,
+				5634B5AB2B63673100382506 /* CharacterScreen */,
+				5634B5B82B63687100382506 /* EpisodeScreen */,
+				5634B5B92B63688800382506 /* LocationScreen */,
 				567B811C2B627273005F676D /* MainTabbar */,
-				567B81692B629847005F676D /* SettingScreen */,
+				5634B5BA2B63689200382506 /* SettingScreen */,
 			);
 			path = Modules;
 			sourceTree = "<group>";
@@ -146,8 +188,8 @@
 		567B811C2B627273005F676D /* MainTabbar */ = {
 			isa = PBXGroup;
 			children = (
-				561C9AE22B62BA2200E49C7A /* MainTabbarViewController.swift */,
-				561C9AE02B62BA1300E49C7A /* MainTabbarView.swift */,
+				567B81432B629133005F676D /* MainTabbarView.storyboard */,
+				567B81212B6272E0005F676D /* MainTabbarView.swift */,
 				567B81252B6272FA005F676D /* MainTabbarPresenter.swift */,
 				567B81272B627310005F676D /* MainTabbarInteractor.swift */,
 				567B81292B627323005F676D /* MainTabbarEntity.swift */,
@@ -309,8 +351,11 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				5634B5E42B636EDE00382506 /* LocationScreenView.storyboard in Resources */,
-				5634B5E02B636ECC00382506 /* CharacterScreenView.storyboard in Resources */,
+				567B81442B629133005F676D /* MainTabbarView.storyboard in Resources */,
+				5634B5B72B63680300382506 /* CharacterScreenView.storyboard in Resources */,
+				5634B5DC2B6368F200382506 /* LocationScreenView.storyboard in Resources */,
+				5634B5DE2B63690600382506 /* SettingScreenView.storyboard in Resources */,
+				5634B5DA2B6368DB00382506 /* EpisodeScreenView.storyboard in Resources */,
 				567B81142B6271C8005F676D /* LaunchScreen.storyboard in Resources */,
 				567B81112B6271C8005F676D /* Assets.xcassets in Resources */,
 				5634B5E62B636EE600382506 /* SettingScreenView.storyboard in Resources */,
@@ -325,31 +370,32 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				567B81642B62979F005F676D /* LocationScreenRouter.swift in Sources */,
-				567B813E2B627489005F676D /* CharacterScreenInteractor.swift in Sources */,
-				567B81662B629802005F676D /* EpisodeScreenEntity.swift in Sources */,
-				567B81562B62965C005F676D /* EpisodeScreenInteractor.swift in Sources */,
+				5634B5C22B6368B400382506 /* SettingScreenInteractor.swift in Sources */,
+				5634B5CD2B6368C200382506 /* LocationScreenView.swift in Sources */,
+				5634B5C02B6368B400382506 /* SettingScreenPresenter.swift in Sources */,
+				5634B5B22B63674500382506 /* CharacterScreenRouter.swift in Sources */,
 				567B812C2B627331005F676D /* MainTabbarRouter.swift in Sources */,
+				5634B5B32B63674500382506 /* CharacterScreenInteractor.swift in Sources */,
+				5634B5D62B6368CF00382506 /* EpisodeScreenInteractor.swift in Sources */,
 				567B81082B6271C6005F676D /* AppDelegate.swift in Sources */,
+				5634B5D42B6368CF00382506 /* EpisodeScreenPresenter.swift in Sources */,
+				5634B5CE2B6368C200382506 /* LocationScreenEntity.swift in Sources */,
+				5634B5B52B63674500382506 /* CharacterScreenEntity.swift in Sources */,
+				5634B5CB2B6368C200382506 /* LocationScreenRouter.swift in Sources */,
+				5634B5D72B6368CF00382506 /* EpisodeScreenView.swift in Sources */,
 				567B81262B6272FA005F676D /* MainTabbarPresenter.swift in Sources */,
-				561C9AD72B62B94500E49C7A /* LocationScreenView.swift in Sources */,
-				561C9AD52B62B92500E49C7A /* LocationScreenViewController.swift in Sources */,
-				561C9AE32B62BA2200E49C7A /* MainTabbarViewController.swift in Sources */,
-				561C9AE12B62BA1300E49C7A /* MainTabbarView.swift in Sources */,
-				567B81732B6298B2005F676D /* SettingScreenRouter.swift in Sources */,
-				561C9AD32B62B8D200E49C7A /* EpisodeScreenViewController.swift in Sources */,
-				567B81542B62963A005F676D /* EpisodeScreenPresenter.swift in Sources */,
-				567B81402B627498005F676D /* CharacterScreenEntity.swift in Sources */,
-				567B813C2B627432005F676D /* CharacterScreenPresenter.swift in Sources */,
+				5634B5D82B6368CF00382506 /* EpisodeScreenEntity.swift in Sources */,
+				5634B5C42B6368B400382506 /* SettingScreenEntity.swift in Sources */,
+				567B81232B6272E0005F676D /* MainTabbarView.swift in Sources */,
 				567B812A2B627323005F676D /* MainTabbarEntity.swift in Sources */,
-				567B81712B6298A2005F676D /* SettingScreenEntity.swift in Sources */,
+				5634B5C12B6368B400382506 /* SettingScreenRouter.swift in Sources */,
+				5634B5C32B6368B400382506 /* SettingScreenView.swift in Sources */,
+				5634B5CA2B6368C200382506 /* LocationScreenPresenter.swift in Sources */,
 				567B81282B627310005F676D /* MainTabbarInteractor.swift in Sources */,
-				567B81622B629798005F676D /* LocationScreenEntity.swift in Sources */,
-				567B816F2B62988E005F676D /* SettingScreenInteractor.swift in Sources */,
-				567B815E2B62977E005F676D /* LocationScreenPresenter.swift in Sources */,
-				567B81602B629790005F676D /* LocationScreenInteractor.swift in Sources */,
-				567B81422B6274AB005F676D /* CharacterScreenRouter.swift in Sources */,
-				561C9ADD2B62B99D00E49C7A /* SettingScreenViewController.swift in Sources */,
+				5634B5B42B63674500382506 /* CharacterScreenView.swift in Sources */,
+				5634B5CC2B6368C200382506 /* LocationScreenInteractor.swift in Sources */,
+				5634B5B12B63674500382506 /* CharacterScreenPresenter.swift in Sources */,
+				5634B5D52B6368CF00382506 /* EpisodeScreenRouter.swift in Sources */,
 				567B810A2B6271C6005F676D /* SceneDelegate.swift in Sources */,
 				567B816D2B629873005F676D /* SettingScreenPresenter.swift in Sources */,
 				561C9ACF2B62B84600E49C7A /* CharacterScreenView.swift in Sources */,

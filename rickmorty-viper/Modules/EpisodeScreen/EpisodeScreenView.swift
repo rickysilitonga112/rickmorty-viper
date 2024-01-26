@@ -1,13 +1,30 @@
-//
+// 
 //  EpisodeScreenView.swift
 //  rickmorty-viper
 //
-//  Created by Ricky Silitonga on 25/01/24.
+//  Created by Ricky Silitonga on 26/01/24.
 //
 
 import UIKit
 
-class EpisodeScreenView: UIView {
+class EpisodeScreenView: UIViewController {
+    
+    private var presenter: EpisodeScreenPresenter?
 
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        
+    }
+
+    static func instance(withPresenter presenter: EpisodeScreenPresenter) -> EpisodeScreenView {
+        let storyboardId = "EpisodeScreenView"
+        let storyboard = UIStoryboard(name: storyboardId, bundle: nil)
+        guard let anyView = storyboard.instantiateViewController(withIdentifier: storyboardId) as? EpisodeScreenView else {
+            fatalError("Error loading Storyboard")
+        }
+        anyView.presenter = presenter
+        return anyView
+    }
 
 }
+

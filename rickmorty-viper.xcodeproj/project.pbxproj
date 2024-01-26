@@ -17,6 +17,10 @@
 		561C9ADF2B62B9AC00E49C7A /* SettingScreenView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 561C9ADE2B62B9AC00E49C7A /* SettingScreenView.swift */; };
 		561C9AE12B62BA1300E49C7A /* MainTabbarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 561C9AE02B62BA1300E49C7A /* MainTabbarView.swift */; };
 		561C9AE32B62BA2200E49C7A /* MainTabbarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 561C9AE22B62BA2200E49C7A /* MainTabbarViewController.swift */; };
+		5634B5E02B636ECC00382506 /* CharacterScreenView.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5634B5DF2B636ECC00382506 /* CharacterScreenView.storyboard */; };
+		5634B5E22B636ED500382506 /* EpisodeScreenView.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5634B5E12B636ED500382506 /* EpisodeScreenView.storyboard */; };
+		5634B5E42B636EDE00382506 /* LocationScreenView.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5634B5E32B636EDE00382506 /* LocationScreenView.storyboard */; };
+		5634B5E62B636EE600382506 /* SettingScreenView.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5634B5E52B636EE600382506 /* SettingScreenView.storyboard */; };
 		567B81082B6271C6005F676D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 567B81072B6271C6005F676D /* AppDelegate.swift */; };
 		567B810A2B6271C6005F676D /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 567B81092B6271C6005F676D /* SceneDelegate.swift */; };
 		567B81112B6271C8005F676D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 567B81102B6271C8005F676D /* Assets.xcassets */; };
@@ -54,6 +58,10 @@
 		561C9ADE2B62B9AC00E49C7A /* SettingScreenView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingScreenView.swift; sourceTree = "<group>"; };
 		561C9AE02B62BA1300E49C7A /* MainTabbarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabbarView.swift; sourceTree = "<group>"; };
 		561C9AE22B62BA2200E49C7A /* MainTabbarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabbarViewController.swift; sourceTree = "<group>"; };
+		5634B5DF2B636ECC00382506 /* CharacterScreenView.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = CharacterScreenView.storyboard; sourceTree = "<group>"; };
+		5634B5E12B636ED500382506 /* EpisodeScreenView.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = EpisodeScreenView.storyboard; sourceTree = "<group>"; };
+		5634B5E32B636EDE00382506 /* LocationScreenView.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = LocationScreenView.storyboard; sourceTree = "<group>"; };
+		5634B5E52B636EE600382506 /* SettingScreenView.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = SettingScreenView.storyboard; sourceTree = "<group>"; };
 		567B81042B6271C6005F676D /* rickmorty-viper.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "rickmorty-viper.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		567B81072B6271C6005F676D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		567B81092B6271C6005F676D /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -157,6 +165,7 @@
 				567B813D2B627489005F676D /* CharacterScreenInteractor.swift */,
 				567B813F2B627498005F676D /* CharacterScreenEntity.swift */,
 				567B81412B6274AB005F676D /* CharacterScreenRouter.swift */,
+				5634B5DF2B636ECC00382506 /* CharacterScreenView.storyboard */,
 			);
 			path = CharacterScreen;
 			sourceTree = "<group>";
@@ -209,6 +218,7 @@
 				567B81552B62965C005F676D /* EpisodeScreenInteractor.swift */,
 				567B81652B629802005F676D /* EpisodeScreenEntity.swift */,
 				567B81572B62967E005F676D /* EpisodeScreenRouter.swift */,
+				5634B5E12B636ED500382506 /* EpisodeScreenView.storyboard */,
 			);
 			path = EpisodeScreen;
 			sourceTree = "<group>";
@@ -222,6 +232,7 @@
 				567B815F2B629790005F676D /* LocationScreenInteractor.swift */,
 				567B81612B629798005F676D /* LocationScreenEntity.swift */,
 				567B81632B62979F005F676D /* LocationScreenRouter.swift */,
+				5634B5E32B636EDE00382506 /* LocationScreenView.storyboard */,
 			);
 			path = LocationScreen;
 			sourceTree = "<group>";
@@ -235,6 +246,7 @@
 				567B816E2B62988E005F676D /* SettingScreenInteractor.swift */,
 				567B81702B6298A2005F676D /* SettingScreenEntity.swift */,
 				567B81722B6298B2005F676D /* SettingScreenRouter.swift */,
+				5634B5E52B636EE600382506 /* SettingScreenView.storyboard */,
 			);
 			path = SettingScreen;
 			sourceTree = "<group>";
@@ -297,8 +309,12 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5634B5E42B636EDE00382506 /* LocationScreenView.storyboard in Resources */,
+				5634B5E02B636ECC00382506 /* CharacterScreenView.storyboard in Resources */,
 				567B81142B6271C8005F676D /* LaunchScreen.storyboard in Resources */,
 				567B81112B6271C8005F676D /* Assets.xcassets in Resources */,
+				5634B5E62B636EE600382506 /* SettingScreenView.storyboard in Resources */,
+				5634B5E22B636ED500382506 /* EpisodeScreenView.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

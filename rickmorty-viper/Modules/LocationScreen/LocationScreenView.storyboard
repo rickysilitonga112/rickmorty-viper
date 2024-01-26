@@ -11,7 +11,7 @@
         <!--Location Screen View-->
         <scene sceneID="s0d-6b-0kx">
             <objects>
-                <viewController storyboardIdentifier="LocationScreenView" useStoryboardIdentifierAsRestorationIdentifier="YES" id="Y6W-OH-hqX" customClass="LocationScreenView" customModule="rickmorty_viper" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="LocationScreenView" id="Y6W-OH-hqX" customClass="LocationScreenView" customModule="rickmorty_viper" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="5EZ-qb-Rvc">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -21,7 +21,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="22" y="4"/>
+            <point key="canvasLocation" x="48" y="-2"/>
         </scene>
     </scenes>
     <resources>

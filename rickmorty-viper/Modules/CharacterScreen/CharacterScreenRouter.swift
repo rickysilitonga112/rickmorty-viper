@@ -1,22 +1,26 @@
-//
-//  CharacterRouter.swift
+// 
+//  CharacterScreenRouter.swift
 //  rickmorty-viper
 //
-//  Created by Ricky Silitonga on 25/01/24.
+//  Created by Ricky Silitonga on 26/01/24.
 //
 
 import UIKit
 
 class CharacterScreenRouter {
+    
     func showView() -> CharacterScreenView {
-        let storyboardId = String(describing: CharacterScreenView.self)
-        let storyboard = UIStoryboard(name: storyboardId, bundle: nil)
-        guard let view = storyboard.instantiateViewController(withIdentifier: storyboardId) as? CharacterScreenView else {
-            fatalError("Error loading Storyboard")
-        }
         let interactor = CharacterScreenInteractor()
         let presenter = CharacterScreenPresenter(interactor: interactor)
-        view.presenter = presenter
+        let view = CharacterScreenView.instance(withPresenter: presenter)
         return view
     }
+    
+    /*
+    func pushToSecondVC(using navigation: UINavigationController, with data: AnyEntity) {
+        let secondVCRouter = SeconVCRouter.showView(with: data)
+        navigation.pushViewController(secondVCRouter, animated: true)
+    }
+     */
+    
 }

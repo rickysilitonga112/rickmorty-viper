@@ -1,22 +1,26 @@
-//
+// 
 //  LocationScreenRouter.swift
 //  rickmorty-viper
 //
-//  Created by Ricky Silitonga on 25/01/24.
+//  Created by Ricky Silitonga on 26/01/24.
 //
 
 import UIKit
 
 class LocationScreenRouter {
+    
     func showView() -> LocationScreenView {
-        let storyboardId = String(describing: LocationScreenView.self)
-        let storyboard = UIStoryboard(name: storyboardId, bundle: nil)
-        guard let view = storyboard.instantiateViewController(withIdentifier: storyboardId) as? LocationScreenView else {
-            fatalError("Error loading storyboard.")
-        }
         let interactor = LocationScreenInteractor()
         let presenter = LocationScreenPresenter(interactor: interactor)
-        view.presenter = presenter
+        let view = LocationScreenView.instance(withPresenter: presenter)
         return view
     }
+    
+    /*
+    func pushToSecondVC(using navigation: UINavigationController, with data: AnyEntity) {
+        let secondVCRouter = SeconVCRouter.showView(with: data)
+        navigation.pushViewController(secondVCRouter, animated: true)
+    }
+     */
+    
 }

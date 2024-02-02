@@ -13,11 +13,23 @@ class CharacterScreenView: UIViewController {
     
     @IBOutlet weak var characterCollectionView: UICollectionView!
     
+    private var characters: [Character] = [] {
+        didSet {
+            characterCollectionView.reloadData()
+        }
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         navigationItem.title = "Character"
         view.backgroundColor = .systemBackground
         setupCollectionView()
+        
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        setupFetchData()
     }
     
     static func instance(withPresenter presenter: CharacterScreenPresenter) -> CharacterScreenView {
@@ -31,6 +43,10 @@ class CharacterScreenView: UIViewController {
     }
     
     // MARK: - Private
+    private func setupFetchData() {
+        
+    }
+    
     private func setupCollectionView() {
         let width = (UIScreen.main.bounds.width - 30) / 2
         let layout = UICollectionViewFlowLayout()
@@ -42,8 +58,6 @@ class CharacterScreenView: UIViewController {
         characterCollectionView.delegate = self
         characterCollectionView.dataSource = self
     }
-    
-    
     // MARK: - Public
 }
 

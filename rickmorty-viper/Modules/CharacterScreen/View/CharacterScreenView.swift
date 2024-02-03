@@ -12,7 +12,7 @@ class CharacterScreenView: UIViewController {
     var bag = DisposeBag()
     
     @IBOutlet weak var characterCollectionView: UICollectionView!
-   
+    
     private var presenter: CharacterScreenPresenter?
     private var isLoadingMoreCharacters = false
     public var apiInfo: CharacterEntity.Info? = nil
@@ -32,11 +32,12 @@ class CharacterScreenView: UIViewController {
                 }).disposed(by: bag)
         }
     }
+    
     public var isShowSpinner: Bool {
         return apiInfo?.next != nil
-//        return true
     }
     
+    // MARK: - Lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
         navigationItem.title = "Character"
@@ -59,8 +60,6 @@ class CharacterScreenView: UIViewController {
         anyView.presenter = presenter
         return anyView
     }
-    
-   
     
     // MARK: - Private
     private func setupFetchData() {
@@ -92,7 +91,35 @@ class CharacterScreenView: UIViewController {
         characterCollectionView.delegate = self
         characterCollectionView.dataSource = self
     }
+    
+    private func fetchMoreCharacters() {
+        // call the presenter
+        guard let nextUrlString = apiInfo?.next,
+              let url = URL(string: nextUrlString) else {
+            return
+        }
+        
+        presenter?.fetchMoreCharacters(from: url)
+            .asObservable()
+            .subscribe(onNext: {[weak self] entity in
+                guard let self = self else { return }
+                
+                print("isLoadingMoreCharacters: \(self.isLoadingMoreCharacters)")
+                print("Fetching from: \(url.absoluteString)")
+                
+                self.apiInfo = entity?.info
+                if let newCharacters = entity?.results {
+                    self.characters.append(contentsOf: newCharacters)
+                    self.isLoadingMoreCharacters = false
+                }
+            }, onError: { error in
+                fatalError("Error fetch more characters with error \(error.localizedDescription)..")
+            }).disposed(by: bag)
+        
+    }
+    
     // MARK: - Public
+    
 }
 
 // MARK: - CollectionView Delegate
@@ -114,7 +141,6 @@ extension CharacterScreenView: UICollectionViewDataSource {
         guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: CharacterCollectionViewCell.identifier, for: indexPath) as? CharacterCollectionViewCell else {
             fatalError("Error initialize character collection view cell")
         }
-        // MOCK CHARACTER
         let character = characters[indexPath.row]
         let image = characterImages[indexPath.row]
         cell.configure(with: character, image: image)
@@ -152,8 +178,13 @@ extension CharacterScreenView: UIScrollViewDelegate {
         }
         
         if offset >= (totalContentHeight - totalScrollViewFixedHeight - 120) {
-            print("Load more characters with url: \(String(describing: apiInfo?.next))")
-//            fetchAdditionalCharacters(url: url)
+            self.isLoadingMoreCharacters = true
+            
+            Timer.scheduledTimer(withTimeInterval: 0.2, repeats: false) { [weak self] t in
+                self?.fetchMoreCharacters()
+                t.invalidate()
+            }
+            
         }
     }
 }

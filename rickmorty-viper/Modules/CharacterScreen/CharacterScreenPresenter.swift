@@ -6,8 +6,9 @@
 //
 
 import Foundation
+import RxSwift
 
-class CharacterScreenPresenter {
+class CharacterScreenPresenter: BasePresenter {
     
     private let interactor: CharacterScreenInteractor
     private let router = CharacterScreenRouter()
@@ -15,5 +16,15 @@ class CharacterScreenPresenter {
     init(interactor: CharacterScreenInteractor) {
         self.interactor = interactor
     }
+    
+    func fetchInitialCharacter() -> Observable<CharacterEntity?> {
+        return interactor.fetchInitialCharacter()
+    }
+    
+    func fetchCharacterImages(from characters: [Character]) -> Observable<[UIImage?]> {
+        return interactor.fetchCharacterImage(from: characters)
+    }
+    
+    
     
 }

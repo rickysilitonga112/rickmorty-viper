@@ -8,7 +8,7 @@
 import Foundation
 
 /// Manages in memory session scope API cache
-final class APICacheManager {
+final class RMAPICacheManager {
     
     // Cache map
     private var cacheDictionary: [Endpoint: NSCache<NSString, NSData>] = [:]

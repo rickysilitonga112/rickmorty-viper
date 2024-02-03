@@ -23,8 +23,9 @@ class CharacterCollectionViewCell: UICollectionViewCell {
     }
 
     
-    public func configure(with image: UIImage) {
+    public func configure(with character: Character, image: UIImage?) {
+        nameLabel.text = character.name
+        statusLabel.text = "Status: \(character.status.text)"
         imageView.image = image
-        imageView.contentMode = .scaleAspectFit
     }
 }

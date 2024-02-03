@@ -17,7 +17,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="ofQ-1j-Fgb">
-                                <rect key="frame" x="0.0" y="59" width="393" height="759"/>
+                                <rect key="frame" x="10" y="59" width="373" height="759"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="9oj-fH-xxQ">
                                     <size key="itemSize" width="187" height="248"/>
@@ -31,10 +31,10 @@
                         <viewLayoutGuide key="safeArea" id="vDu-zF-Fre"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="ofQ-1j-Fgb" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" id="8yB-1O-fw8"/>
-                            <constraint firstItem="ofQ-1j-Fgb" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" id="Pkf-fG-HLm"/>
-                            <constraint firstItem="vDu-zF-Fre" firstAttribute="bottom" secondItem="ofQ-1j-Fgb" secondAttribute="bottom" id="WcZ-Hr-j54"/>
-                            <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="ofQ-1j-Fgb" secondAttribute="trailing" id="bAa-wv-vF4"/>
+                            <constraint firstItem="ofQ-1j-Fgb" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" id="Hud-nS-veH"/>
+                            <constraint firstItem="ofQ-1j-Fgb" firstAttribute="trailing" secondItem="vDu-zF-Fre" secondAttribute="trailing" constant="-10" id="TBX-Pi-bBP"/>
+                            <constraint firstItem="ofQ-1j-Fgb" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="10" id="UDX-UD-O89"/>
+                            <constraint firstItem="ofQ-1j-Fgb" firstAttribute="bottom" secondItem="vDu-zF-Fre" secondAttribute="bottom" id="e9X-K7-6vu"/>
                         </constraints>
                     </view>
                     <connections>

@@ -131,6 +131,7 @@ extension CharacterScreenView: UICollectionViewDataSource {
         guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: CharacterCollectionViewCell.identifier, for: indexPath) as? CharacterCollectionViewCell else {
             fatalError("Error initialize character collection view cell")
         }
+        
         cell.configure(with: characters[indexPath.row])
         return cell
     }

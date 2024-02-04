@@ -6,12 +6,15 @@
 //
 
 import UIKit
-import RxSwift
+import Combine
 
 class CharacterCollectionViewCell: UICollectionViewCell {
+    @IBOutlet weak var containerView: UIView!
     @IBOutlet weak var imageView: UIImageView!
     @IBOutlet weak var nameLabel: UILabel!
     @IBOutlet weak var statusLabel: UILabel!
+    
+    private var cancellables = Set<AnyCancellable>()
     
     static let identifier = String(describing: CharacterCollectionViewCell.self)
     static func nib() -> UINib {
@@ -20,7 +23,19 @@ class CharacterCollectionViewCell: UICollectionViewCell {
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        // Initialization code
+        contentView.backgroundColor = .systemBackground
+        containerView.backgroundColor = .systemBackground
+        
+        setupLayer()
+    }
+    
+    private func setupLayer() {
+       contentView.layer.cornerRadius = 4.0
+       contentView.layer.masksToBounds = true
+       layer.shadowColor = UIColor.lightGray.cgColor
+       layer.shadowOffset = CGSize(width: 4.0, height: 4.0)
+       layer.shadowOpacity = 0.3
+       layer.masksToBounds = false
     }
     
     override func prepareForReuse() {
@@ -30,9 +45,12 @@ class CharacterCollectionViewCell: UICollectionViewCell {
         statusLabel.text = nil
     }
     
+    // MARK: - private
+    
+    // MARK: - public
     public func configure(with character: Character) {
         nameLabel.text = character.name
-        statusLabel.text = "Stautus: \(character.status)"
+        statusLabel.text = "Status: \(character.status)"
         
         guard let url = URL(string: character.image) else { return }
         RMImageLoader.shared.downloadImage(url) { result in

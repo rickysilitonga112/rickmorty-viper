@@ -16,23 +16,13 @@ class CharacterScreenView: UIViewController {
     private var presenter: CharacterScreenPresenter?
     private var isLoadingMoreCharacters = false
     public var apiInfo: CharacterEntity.Info? = nil
-    private var characterImages: [UIImage?] = [] {
-        didSet {
-            loadCharacterCollection()
-        }
-    }
-    
     private var characters: [Character] = [] {
         didSet {
-            presenter?.fetchCharacterImages(from: characters)
-                .subscribe(onNext: { characterImages in
-                    self.characterImages = characterImages
-                }, onError: { _ in
-                    fatalError()
-                }).disposed(by: bag)
+            characterCollectionView.reloadData()
         }
     }
     
+    private var charactersList = PublishSubject<[Character]>()
     public var isShowSpinner: Bool {
         return apiInfo?.next != nil
     }
@@ -75,11 +65,6 @@ class CharacterScreenView: UIViewController {
             }).disposed(by: bag)
     }
     
-    private func loadCharacterCollection() {
-        DispatchQueue.main.async {
-            self.characterCollectionView.reloadData()
-        }
-    }
     private func setupCollectionView() {
         let width = (UIScreen.main.bounds.width - 30) / 2
         let layout = UICollectionViewFlowLayout()
@@ -146,9 +131,7 @@ extension CharacterScreenView: UICollectionViewDataSource {
         guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: CharacterCollectionViewCell.identifier, for: indexPath) as? CharacterCollectionViewCell else {
             fatalError("Error initialize character collection view cell")
         }
-        let character = characters[indexPath.row]
-        let image = characterImages[indexPath.row]
-        cell.configure(with: character, image: image)
+        cell.configure(with: characters[indexPath.row])
         return cell
     }
     

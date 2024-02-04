@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import RxSwift
 
 class CharacterCollectionViewCell: UICollectionViewCell {
     @IBOutlet weak var imageView: UIImageView!
@@ -21,11 +22,29 @@ class CharacterCollectionViewCell: UICollectionViewCell {
         super.awakeFromNib()
         // Initialization code
     }
-
     
-    public func configure(with character: Character, image: UIImage?) {
+    override func prepareForReuse() {
+        super.prepareForReuse()
+        imageView.image = nil
+        nameLabel.text = nil
+        statusLabel.text = nil
+    }
+    
+    public func configure(with character: Character) {
         nameLabel.text = character.name
-        statusLabel.text = "Status: \(character.status.text)"
-        imageView.image = image
+        statusLabel.text = "Stautus: \(character.status)"
+        
+        guard let url = URL(string: character.image) else { return }
+        RMImageLoader.shared.downloadImage(url) { result in
+            switch result {
+            case .success(let data):
+                DispatchQueue.main.async {
+                    self.imageView.image = UIImage(data: data)
+                }
+            case .failure(let error):
+                print(String(describing: error))
+                break
+            }
+        }
     }
 }

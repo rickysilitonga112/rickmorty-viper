@@ -21,10 +21,6 @@ class CharacterScreenPresenter: BasePresenter {
         return interactor.fetchInitialCharacters()
     }
     
-    func fetchCharacterImages(from characters: [Character]) -> Observable<[UIImage?]> {
-        return interactor.fetchCharacterImage(from: characters)
-    }
-    
     func fetchMoreCharacters(from url: URL?) -> Observable<CharacterEntity?> {
         return interactor.fetchMoreCharacters(from: url)
     }

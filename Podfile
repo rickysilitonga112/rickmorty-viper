@@ -11,5 +11,6 @@ target 'rickmorty-viper' do
   pod 'RxDataSources', '5.0.0'
   pod 'lottie-ios'
   pod 'netfox'
+  pod 'Kingfisher', '~> 7.0'
   
 end

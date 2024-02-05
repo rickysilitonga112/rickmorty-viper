@@ -6,15 +6,13 @@
 //
 
 import UIKit
-import Combine
+import Kingfisher
 
 class CharacterCollectionViewCell: UICollectionViewCell {
     @IBOutlet weak var containerView: UIView!
     @IBOutlet weak var imageView: UIImageView!
     @IBOutlet weak var nameLabel: UILabel!
     @IBOutlet weak var statusLabel: UILabel!
-    
-    private var cancellables = Set<AnyCancellable>()
     
     static let identifier = String(describing: CharacterCollectionViewCell.self)
     static func nib() -> UINib {
@@ -53,16 +51,6 @@ class CharacterCollectionViewCell: UICollectionViewCell {
         statusLabel.text = "Status: \(character.status)"
         
         guard let url = URL(string: character.image) else { return }
-        RMImageLoader.shared.downloadImage(url) { result in
-            switch result {
-            case .success(let data):
-                DispatchQueue.main.async {
-                    self.imageView.image = UIImage(data: data)
-                }
-            case .failure(let error):
-                print(String(describing: error))
-                break
-            }
-        }
+        imageView.kf.setImage(with: url)
     }
 }

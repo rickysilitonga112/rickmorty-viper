@@ -8,6 +8,7 @@
 import UIKit
 
 class CharacterDetailView: UIViewController {
+    @IBOutlet weak var collectionView: UICollectionView!
     var character: Character?
     var presenter: CharacterDetailPresenter?
 

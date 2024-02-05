@@ -24,4 +24,9 @@ class CharacterScreenPresenter: BasePresenter {
     func fetchMoreCharacters(from url: URL?) -> Observable<CharacterEntity?> {
         return interactor.fetchMoreCharacters(from: url)
     }
+    
+    func navigateToDetailCharacter(from navigation: UINavigationController, 
+                                   with data: Character) {
+        router.navigateToDetailCharacter(from: navigation, with: data)
+    }
 }

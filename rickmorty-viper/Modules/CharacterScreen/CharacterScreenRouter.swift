@@ -15,4 +15,12 @@ class CharacterScreenRouter {
         let view = CharacterScreenView.instance(withPresenter: presenter)
         return view
     }
+    
+    func navigateToDetailCharacter(from navigation: UINavigationController,
+                                   with data: Character) {
+        let characterDetailView = CharacterDetailRouter().showView(with: data)
+        
+        // TODO: - set the character data
+        navigation.pushViewController(characterDetailView, animated: true)
+    }
 }

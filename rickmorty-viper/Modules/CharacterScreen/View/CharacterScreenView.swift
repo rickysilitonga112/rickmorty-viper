@@ -94,7 +94,7 @@ class CharacterScreenView: UIViewController {
             .subscribe(onNext: {[weak self] entity in
                 guard let self = self else { return }
                 
-                print("isLoadingMoreCharacters: \(self.isLoadingMoreCharacters)")
+//                print("isLoadingMoreCharacters: \(self.isLoadingMoreCharacters)")
                 print("Fetching from: \(url.absoluteString)")
                 
                 self.apiInfo = entity?.info
@@ -105,7 +105,6 @@ class CharacterScreenView: UIViewController {
             }, onError: { error in
                 fatalError("Error fetch more characters with error \(error.localizedDescription)..")
             }).disposed(by: bag)
-        
     }
     
     // MARK: - Public
@@ -118,6 +117,11 @@ extension CharacterScreenView: UICollectionViewDelegate {
         // TODO: - goto detail view controller
         collectionView.deselectItem(at: indexPath, animated: true)
         
+        guard let presenter = presenter,
+              let navigation = navigationController else {
+            return
+        }
+        presenter.navigateToDetailCharacter(from: navigation, with: characters[indexPath.row])
     }
 }
 

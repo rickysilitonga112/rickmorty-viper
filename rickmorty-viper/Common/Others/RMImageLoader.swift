@@ -17,7 +17,7 @@ class RMImageLoader {
     public func downloadImage(_ url: URL, completion: @escaping (Result<Data, Error>) -> Void) {
         let key = url.absoluteString as NSString
         if let data = imageDataCache.object(forKey: key) {
-            print("DEBUG: Get chace image data..")
+            print("DEBUG: Using image from cache..")
             completion(.success(data as Data))
             return
         }

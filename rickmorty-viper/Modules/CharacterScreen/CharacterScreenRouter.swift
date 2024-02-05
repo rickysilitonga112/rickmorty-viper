@@ -16,11 +16,11 @@ class CharacterScreenRouter {
         return view
     }
     
-    /*
-    func pushToSecondVC(using navigation: UINavigationController, with data: AnyEntity) {
-        let secondVCRouter = SeconVCRouter.showView(with: data)
-        navigation.pushViewController(secondVCRouter, animated: true)
+    func navigateToDetailCharacter(from navigation: UINavigationController,
+                                   with data: Character) {
+        let characterDetailView = CharacterDetailRouter().showView(with: data)
+        
+        // TODO: - set the character data
+        navigation.pushViewController(characterDetailView, animated: true)
     }
-     */
-    
 }

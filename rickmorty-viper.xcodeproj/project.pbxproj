@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4E7899FD2B1D59E234B36915 /* Pods_rickmorty_viper.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A7887EA43CFB728903B0F832 /* Pods_rickmorty_viper.framework */; };
 		5634B5B12B63674500382506 /* CharacterScreenPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5634B5AC2B63674500382506 /* CharacterScreenPresenter.swift */; };
 		5634B5B22B63674500382506 /* CharacterScreenRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5634B5AD2B63674500382506 /* CharacterScreenRouter.swift */; };
 		5634B5B32B63674500382506 /* CharacterScreenInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5634B5AE2B63674500382506 /* CharacterScreenInteractor.swift */; };
@@ -42,7 +43,23 @@
 		567B81282B627310005F676D /* MainTabbarInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 567B81272B627310005F676D /* MainTabbarInteractor.swift */; };
 		567B812A2B627323005F676D /* MainTabbarEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 567B81292B627323005F676D /* MainTabbarEntity.swift */; };
 		567B812C2B627331005F676D /* MainTabbarRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 567B812B2B627331005F676D /* MainTabbarRouter.swift */; };
-		9B3592B8EDDCE94FA885335D /* Pods_rickmorty_viper.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3C9742FAFBFE1E4DB66E6D90 /* Pods_rickmorty_viper.framework */; };
+		56BB54D62B6394DE00EEEA2C /* CharacterCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56BB54D42B6394DE00EEEA2C /* CharacterCollectionViewCell.swift */; };
+		56BB54D72B6394DE00EEEA2C /* CharacterCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 56BB54D52B6394DE00EEEA2C /* CharacterCollectionViewCell.xib */; };
+		56BB54D92B63AFA900EEEA2C /* Endpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56BB54D82B63AFA900EEEA2C /* Endpoint.swift */; };
+		56BB54DB2B63B00100EEEA2C /* Request.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56BB54DA2B63B00100EEEA2C /* Request.swift */; };
+		56BB54DD2B63B00F00EEEA2C /* ApiManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56BB54DC2B63B00F00EEEA2C /* ApiManager.swift */; };
+		56BB54E02B63B25D00EEEA2C /* RMCacheManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56BB54DF2B63B25D00EEEA2C /* RMCacheManager.swift */; };
+		56E466082B6C979C00BB9EFD /* BasePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56E466072B6C979C00BB9EFD /* BasePresenter.swift */; };
+		56E4660A2B6C97E000BB9EFD /* BaseInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56E466092B6C97E000BB9EFD /* BaseInteractor.swift */; };
+		56E4660D2B6CC32D00BB9EFD /* RMImageLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56E4660C2B6CC32D00BB9EFD /* RMImageLoader.swift */; };
+		56E4660F2B6CC4A200BB9EFD /* RMConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56E4660E2B6CC4A200BB9EFD /* RMConstants.swift */; };
+		56E466162B6CE66500BB9EFD /* CharacterDetailPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56E466112B6CE66500BB9EFD /* CharacterDetailPresenter.swift */; };
+		56E466172B6CE66500BB9EFD /* CharacterDetailRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56E466122B6CE66500BB9EFD /* CharacterDetailRouter.swift */; };
+		56E466182B6CE66500BB9EFD /* CharacterDetailInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56E466132B6CE66500BB9EFD /* CharacterDetailInteractor.swift */; };
+		56E466192B6CE66500BB9EFD /* CharacterDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56E466142B6CE66500BB9EFD /* CharacterDetailView.swift */; };
+		56E4661A2B6CE66500BB9EFD /* CharacterDetailEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56E466152B6CE66500BB9EFD /* CharacterDetailEntity.swift */; };
+		56E4661C2B6CE67100BB9EFD /* CharacterDetailView.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 56E4661B2B6CE67100BB9EFD /* CharacterDetailView.storyboard */; };
+		56E4661F2B6E777800BB9EFD /* RMFooterLoadingCollectionReusableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56E4661E2B6E777800BB9EFD /* RMFooterLoadingCollectionReusableView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -85,7 +102,27 @@
 		567B81272B627310005F676D /* MainTabbarInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabbarInteractor.swift; sourceTree = "<group>"; };
 		567B81292B627323005F676D /* MainTabbarEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabbarEntity.swift; sourceTree = "<group>"; };
 		567B812B2B627331005F676D /* MainTabbarRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabbarRouter.swift; sourceTree = "<group>"; };
-		7CEF4376AF4C2FD688C1E89D /* Pods-rickmorty-viper.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-rickmorty-viper.release.xcconfig"; path = "Target Support Files/Pods-rickmorty-viper/Pods-rickmorty-viper.release.xcconfig"; sourceTree = "<group>"; };
+		56BB54D42B6394DE00EEEA2C /* CharacterCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterCollectionViewCell.swift; sourceTree = "<group>"; };
+		56BB54D52B6394DE00EEEA2C /* CharacterCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CharacterCollectionViewCell.xib; sourceTree = "<group>"; };
+		56BB54D82B63AFA900EEEA2C /* Endpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Endpoint.swift; sourceTree = "<group>"; };
+		56BB54DA2B63B00100EEEA2C /* Request.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Request.swift; sourceTree = "<group>"; };
+		56BB54DC2B63B00F00EEEA2C /* ApiManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiManager.swift; sourceTree = "<group>"; };
+		56BB54DF2B63B25D00EEEA2C /* RMCacheManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RMCacheManager.swift; sourceTree = "<group>"; };
+		56BB54E12B63DC6F00EEEA2C /* RxCocoa.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = RxCocoa.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		56E466072B6C979C00BB9EFD /* BasePresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BasePresenter.swift; sourceTree = "<group>"; };
+		56E466092B6C97E000BB9EFD /* BaseInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseInteractor.swift; sourceTree = "<group>"; };
+		56E4660C2B6CC32D00BB9EFD /* RMImageLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RMImageLoader.swift; sourceTree = "<group>"; };
+		56E4660E2B6CC4A200BB9EFD /* RMConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RMConstants.swift; sourceTree = "<group>"; };
+		56E466112B6CE66500BB9EFD /* CharacterDetailPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterDetailPresenter.swift; sourceTree = "<group>"; };
+		56E466122B6CE66500BB9EFD /* CharacterDetailRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterDetailRouter.swift; sourceTree = "<group>"; };
+		56E466132B6CE66500BB9EFD /* CharacterDetailInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterDetailInteractor.swift; sourceTree = "<group>"; };
+		56E466142B6CE66500BB9EFD /* CharacterDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterDetailView.swift; sourceTree = "<group>"; };
+		56E466152B6CE66500BB9EFD /* CharacterDetailEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterDetailEntity.swift; sourceTree = "<group>"; };
+		56E4661B2B6CE67100BB9EFD /* CharacterDetailView.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = CharacterDetailView.storyboard; sourceTree = "<group>"; };
+		56E4661E2B6E777800BB9EFD /* RMFooterLoadingCollectionReusableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RMFooterLoadingCollectionReusableView.swift; sourceTree = "<group>"; };
+		9616BB236A2C3E63692457A2 /* Pods-rickmorty-viper.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-rickmorty-viper.debug.xcconfig"; path = "Target Support Files/Pods-rickmorty-viper/Pods-rickmorty-viper.debug.xcconfig"; sourceTree = "<group>"; };
+		A7887EA43CFB728903B0F832 /* Pods_rickmorty_viper.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_rickmorty_viper.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		FA12621864962756E34B82C5 /* Pods-rickmorty-viper.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-rickmorty-viper.release.xcconfig"; path = "Target Support Files/Pods-rickmorty-viper/Pods-rickmorty-viper.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -93,18 +130,26 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				9B3592B8EDDCE94FA885335D /* Pods_rickmorty_viper.framework in Frameworks */,
+				4E7899FD2B1D59E234B36915 /* Pods_rickmorty_viper.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0E548B09320FB9D02810347B /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				56BB54E12B63DC6F00EEEA2C /* RxCocoa.framework */,
+				A7887EA43CFB728903B0F832 /* Pods_rickmorty_viper.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		5634B5AB2B63673100382506 /* CharacterScreen */ = {
 			isa = PBXGroup;
 			children = (
-				5634B5B62B63680300382506 /* CharacterScreenView.storyboard */,
-				5634B5AF2B63674500382506 /* CharacterScreenView.swift */,
+				56BB54D22B6394A200EEEA2C /* View */,
 				5634B5AC2B63674500382506 /* CharacterScreenPresenter.swift */,
 				5634B5AE2B63674500382506 /* CharacterScreenInteractor.swift */,
 				5634B5B02B63674500382506 /* CharacterScreenEntity.swift */,
@@ -156,6 +201,8 @@
 			isa = PBXGroup;
 			children = (
 				5634B5F02B638B0600382506 /* BaseViewController.swift */,
+				56E466072B6C979C00BB9EFD /* BasePresenter.swift */,
+				56E466092B6C97E000BB9EFD /* BaseInteractor.swift */,
 			);
 			path = BaseModule;
 			sourceTree = "<group>";
@@ -165,8 +212,8 @@
 			children = (
 				567B81062B6271C6005F676D /* rickmorty-viper */,
 				567B81052B6271C6005F676D /* Products */,
-				DBAEB31627848A637BDC0685 /* Pods */,
-				FF650251569DBBFF23C162D4 /* Frameworks */,
+				F2EB87BEBC1FC428E63E8103 /* Pods */,
+				0E548B09320FB9D02810347B /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -195,6 +242,7 @@
 		567B811B2B627263005F676D /* Modules */ = {
 			isa = PBXGroup;
 			children = (
+				56E466102B6CE62300BB9EFD /* CharacterDetail */,
 				5634B5AB2B63673100382506 /* CharacterScreen */,
 				5634B5B82B63687100382506 /* EpisodeScreen */,
 				5634B5B92B63688800382506 /* LocationScreen */,
@@ -239,6 +287,9 @@
 			isa = PBXGroup;
 			children = (
 				5634B5EF2B638AF600382506 /* BaseModule */,
+				56BB54DE2B63B24600EEEA2C /* Managers */,
+				56E4661D2B6E773100BB9EFD /* Spinner */,
+				56E4660B2B6CC30700BB9EFD /* Others */,
 			);
 			path = Common;
 			sourceTree = "<group>";
@@ -253,15 +304,75 @@
 		567B814B2B6292FB005F676D /* Networking */ = {
 			isa = PBXGroup;
 			children = (
+				56BB54D82B63AFA900EEEA2C /* Endpoint.swift */,
+				56BB54DA2B63B00100EEEA2C /* Request.swift */,
+				56BB54DC2B63B00F00EEEA2C /* ApiManager.swift */,
 			);
 			path = Networking;
 			sourceTree = "<group>";
 		};
-		DBAEB31627848A637BDC0685 /* Pods */ = {
+		56BB54D22B6394A200EEEA2C /* View */ = {
 			isa = PBXGroup;
 			children = (
-				4A40C0A1C88BAF1DAA5F8DB3 /* Pods-rickmorty-viper.debug.xcconfig */,
-				7CEF4376AF4C2FD688C1E89D /* Pods-rickmorty-viper.release.xcconfig */,
+				56BB54D32B6394B300EEEA2C /* CharacterViewCell */,
+				5634B5AF2B63674500382506 /* CharacterScreenView.swift */,
+				5634B5B62B63680300382506 /* CharacterScreenView.storyboard */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		56BB54D32B6394B300EEEA2C /* CharacterViewCell */ = {
+			isa = PBXGroup;
+			children = (
+				56BB54D42B6394DE00EEEA2C /* CharacterCollectionViewCell.swift */,
+				56BB54D52B6394DE00EEEA2C /* CharacterCollectionViewCell.xib */,
+			);
+			path = CharacterViewCell;
+			sourceTree = "<group>";
+		};
+		56BB54DE2B63B24600EEEA2C /* Managers */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Managers;
+			sourceTree = "<group>";
+		};
+		56E4660B2B6CC30700BB9EFD /* Others */ = {
+			isa = PBXGroup;
+			children = (
+				56BB54DF2B63B25D00EEEA2C /* RMCacheManager.swift */,
+				56E4660E2B6CC4A200BB9EFD /* RMConstants.swift */,
+				56E4660C2B6CC32D00BB9EFD /* RMImageLoader.swift */,
+			);
+			path = Others;
+			sourceTree = "<group>";
+		};
+		56E466102B6CE62300BB9EFD /* CharacterDetail */ = {
+			isa = PBXGroup;
+			children = (
+				56E4661B2B6CE67100BB9EFD /* CharacterDetailView.storyboard */,
+				56E466142B6CE66500BB9EFD /* CharacterDetailView.swift */,
+				56E466112B6CE66500BB9EFD /* CharacterDetailPresenter.swift */,
+				56E466132B6CE66500BB9EFD /* CharacterDetailInteractor.swift */,
+				56E466122B6CE66500BB9EFD /* CharacterDetailRouter.swift */,
+				56E466152B6CE66500BB9EFD /* CharacterDetailEntity.swift */,
+			);
+			path = CharacterDetail;
+			sourceTree = "<group>";
+		};
+		56E4661D2B6E773100BB9EFD /* Spinner */ = {
+			isa = PBXGroup;
+			children = (
+				56E4661E2B6E777800BB9EFD /* RMFooterLoadingCollectionReusableView.swift */,
+			);
+			path = Spinner;
+			sourceTree = "<group>";
+		};
+		F2EB87BEBC1FC428E63E8103 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				9616BB236A2C3E63692457A2 /* Pods-rickmorty-viper.debug.xcconfig */,
+				FA12621864962756E34B82C5 /* Pods-rickmorty-viper.release.xcconfig */,
 			);
 			name = Pods;
 			path = Pods;
@@ -282,11 +393,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 567B81182B6271C8005F676D /* Build configuration list for PBXNativeTarget "rickmorty-viper" */;
 			buildPhases = (
-				2DAAC998D4BF4B6021A735CE /* [CP] Check Pods Manifest.lock */,
+				972CBE3CE1E98C49205E69CB /* [CP] Check Pods Manifest.lock */,
 				567B81002B6271C6005F676D /* Sources */,
 				567B81012B6271C6005F676D /* Frameworks */,
 				567B81022B6271C6005F676D /* Resources */,
-				7F3BE98C760A6491616F5D01 /* [CP] Embed Pods Frameworks */,
+				3A7ACDE52829B234643FA555 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -339,16 +450,35 @@
 				5634B5DC2B6368F200382506 /* LocationScreenView.storyboard in Resources */,
 				5634B5DE2B63690600382506 /* SettingScreenView.storyboard in Resources */,
 				5634B5DA2B6368DB00382506 /* EpisodeScreenView.storyboard in Resources */,
+				56BB54D72B6394DE00EEEA2C /* CharacterCollectionViewCell.xib in Resources */,
 				5634B5EC2B63720400382506 /* MainTabbarView.storyboard in Resources */,
 				567B81142B6271C8005F676D /* LaunchScreen.storyboard in Resources */,
 				567B81112B6271C8005F676D /* Assets.xcassets in Resources */,
+				56E4661C2B6CE67100BB9EFD /* CharacterDetailView.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		2DAAC998D4BF4B6021A735CE /* [CP] Check Pods Manifest.lock */ = {
+		3A7ACDE52829B234643FA555 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-rickmorty-viper/Pods-rickmorty-viper-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-rickmorty-viper/Pods-rickmorty-viper-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-rickmorty-viper/Pods-rickmorty-viper-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		972CBE3CE1E98C49205E69CB /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -394,30 +524,45 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				56BB54DD2B63B00F00EEEA2C /* ApiManager.swift in Sources */,
 				5634B5C22B6368B400382506 /* SettingScreenInteractor.swift in Sources */,
 				5634B5CD2B6368C200382506 /* LocationScreenView.swift in Sources */,
 				5634B5C02B6368B400382506 /* SettingScreenPresenter.swift in Sources */,
 				5634B5B22B63674500382506 /* CharacterScreenRouter.swift in Sources */,
+				56E466182B6CE66500BB9EFD /* CharacterDetailInteractor.swift in Sources */,
+				56BB54D92B63AFA900EEEA2C /* Endpoint.swift in Sources */,
+				56E4660A2B6C97E000BB9EFD /* BaseInteractor.swift in Sources */,
 				567B812C2B627331005F676D /* MainTabbarRouter.swift in Sources */,
+				56E4661A2B6CE66500BB9EFD /* CharacterDetailEntity.swift in Sources */,
+				56BB54DB2B63B00100EEEA2C /* Request.swift in Sources */,
 				5634B5F12B638B0600382506 /* BaseViewController.swift in Sources */,
 				5634B5B32B63674500382506 /* CharacterScreenInteractor.swift in Sources */,
 				5634B5D62B6368CF00382506 /* EpisodeScreenInteractor.swift in Sources */,
 				567B81082B6271C6005F676D /* AppDelegate.swift in Sources */,
 				5634B5D42B6368CF00382506 /* EpisodeScreenPresenter.swift in Sources */,
+				56E4660D2B6CC32D00BB9EFD /* RMImageLoader.swift in Sources */,
+				56E466082B6C979C00BB9EFD /* BasePresenter.swift in Sources */,
 				5634B5CE2B6368C200382506 /* LocationScreenEntity.swift in Sources */,
+				56E466162B6CE66500BB9EFD /* CharacterDetailPresenter.swift in Sources */,
 				5634B5B52B63674500382506 /* CharacterScreenEntity.swift in Sources */,
 				5634B5CB2B6368C200382506 /* LocationScreenRouter.swift in Sources */,
+				56E4661F2B6E777800BB9EFD /* RMFooterLoadingCollectionReusableView.swift in Sources */,
 				5634B5D72B6368CF00382506 /* EpisodeScreenView.swift in Sources */,
 				567B81262B6272FA005F676D /* MainTabbarPresenter.swift in Sources */,
 				5634B5D82B6368CF00382506 /* EpisodeScreenEntity.swift in Sources */,
 				5634B5C42B6368B400382506 /* SettingScreenEntity.swift in Sources */,
+				56BB54D62B6394DE00EEEA2C /* CharacterCollectionViewCell.swift in Sources */,
 				567B812A2B627323005F676D /* MainTabbarEntity.swift in Sources */,
 				5634B5C12B6368B400382506 /* SettingScreenRouter.swift in Sources */,
 				5634B5C32B6368B400382506 /* SettingScreenView.swift in Sources */,
+				56E466172B6CE66500BB9EFD /* CharacterDetailRouter.swift in Sources */,
 				5634B5EE2B63723200382506 /* MainTabbarView.swift in Sources */,
 				5634B5CA2B6368C200382506 /* LocationScreenPresenter.swift in Sources */,
 				567B81282B627310005F676D /* MainTabbarInteractor.swift in Sources */,
+				56E4660F2B6CC4A200BB9EFD /* RMConstants.swift in Sources */,
 				5634B5B42B63674500382506 /* CharacterScreenView.swift in Sources */,
+				56BB54E02B63B25D00EEEA2C /* RMCacheManager.swift in Sources */,
+				56E466192B6CE66500BB9EFD /* CharacterDetailView.swift in Sources */,
 				5634B5CC2B6368C200382506 /* LocationScreenInteractor.swift in Sources */,
 				5634B5B12B63674500382506 /* CharacterScreenPresenter.swift in Sources */,
 				5634B5D52B6368CF00382506 /* EpisodeScreenRouter.swift in Sources */,
@@ -560,13 +705,14 @@
 		};
 		567B81192B6271C8005F676D /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 4A40C0A1C88BAF1DAA5F8DB3 /* Pods-rickmorty-viper.debug.xcconfig */;
+			baseConfigurationReference = 9616BB236A2C3E63692457A2 /* Pods-rickmorty-viper.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = KFD27J2TGQ;
+				ENABLE_USER_SCRIPT_SANDBOXING = NO;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "rickmorty-viper/Info.plist";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -588,13 +734,14 @@
 		};
 		567B811A2B6271C8005F676D /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 7CEF4376AF4C2FD688C1E89D /* Pods-rickmorty-viper.release.xcconfig */;
+			baseConfigurationReference = FA12621864962756E34B82C5 /* Pods-rickmorty-viper.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = KFD27J2TGQ;
+				ENABLE_USER_SCRIPT_SANDBOXING = NO;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "rickmorty-viper/Info.plist";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;

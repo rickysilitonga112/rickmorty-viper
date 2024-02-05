@@ -42,9 +42,12 @@
 		567B81282B627310005F676D /* MainTabbarInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 567B81272B627310005F676D /* MainTabbarInteractor.swift */; };
 		567B812A2B627323005F676D /* MainTabbarEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 567B81292B627323005F676D /* MainTabbarEntity.swift */; };
 		567B812C2B627331005F676D /* MainTabbarRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 567B812B2B627331005F676D /* MainTabbarRouter.swift */; };
+		9B3592B8EDDCE94FA885335D /* Pods_rickmorty_viper.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3C9742FAFBFE1E4DB66E6D90 /* Pods_rickmorty_viper.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		3C9742FAFBFE1E4DB66E6D90 /* Pods_rickmorty_viper.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_rickmorty_viper.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		4A40C0A1C88BAF1DAA5F8DB3 /* Pods-rickmorty-viper.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-rickmorty-viper.debug.xcconfig"; path = "Target Support Files/Pods-rickmorty-viper/Pods-rickmorty-viper.debug.xcconfig"; sourceTree = "<group>"; };
 		5634B5AC2B63674500382506 /* CharacterScreenPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterScreenPresenter.swift; sourceTree = "<group>"; };
 		5634B5AD2B63674500382506 /* CharacterScreenRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterScreenRouter.swift; sourceTree = "<group>"; };
 		5634B5AE2B63674500382506 /* CharacterScreenInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterScreenInteractor.swift; sourceTree = "<group>"; };
@@ -82,6 +85,7 @@
 		567B81272B627310005F676D /* MainTabbarInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabbarInteractor.swift; sourceTree = "<group>"; };
 		567B81292B627323005F676D /* MainTabbarEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabbarEntity.swift; sourceTree = "<group>"; };
 		567B812B2B627331005F676D /* MainTabbarRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabbarRouter.swift; sourceTree = "<group>"; };
+		7CEF4376AF4C2FD688C1E89D /* Pods-rickmorty-viper.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-rickmorty-viper.release.xcconfig"; path = "Target Support Files/Pods-rickmorty-viper/Pods-rickmorty-viper.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -89,6 +93,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9B3592B8EDDCE94FA885335D /* Pods_rickmorty_viper.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -160,6 +165,8 @@
 			children = (
 				567B81062B6271C6005F676D /* rickmorty-viper */,
 				567B81052B6271C6005F676D /* Products */,
+				DBAEB31627848A637BDC0685 /* Pods */,
+				FF650251569DBBFF23C162D4 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -250,6 +257,24 @@
 			path = Networking;
 			sourceTree = "<group>";
 		};
+		DBAEB31627848A637BDC0685 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				4A40C0A1C88BAF1DAA5F8DB3 /* Pods-rickmorty-viper.debug.xcconfig */,
+				7CEF4376AF4C2FD688C1E89D /* Pods-rickmorty-viper.release.xcconfig */,
+			);
+			name = Pods;
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		FF650251569DBBFF23C162D4 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				3C9742FAFBFE1E4DB66E6D90 /* Pods_rickmorty_viper.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -257,9 +282,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 567B81182B6271C8005F676D /* Build configuration list for PBXNativeTarget "rickmorty-viper" */;
 			buildPhases = (
+				2DAAC998D4BF4B6021A735CE /* [CP] Check Pods Manifest.lock */,
 				567B81002B6271C6005F676D /* Sources */,
 				567B81012B6271C6005F676D /* Frameworks */,
 				567B81022B6271C6005F676D /* Resources */,
+				7F3BE98C760A6491616F5D01 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -319,6 +346,48 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		2DAAC998D4BF4B6021A735CE /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-rickmorty-viper-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		7F3BE98C760A6491616F5D01 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-rickmorty-viper/Pods-rickmorty-viper-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-rickmorty-viper/Pods-rickmorty-viper-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-rickmorty-viper/Pods-rickmorty-viper-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		567B81002B6271C6005F676D /* Sources */ = {
@@ -491,6 +560,7 @@
 		};
 		567B81192B6271C8005F676D /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 4A40C0A1C88BAF1DAA5F8DB3 /* Pods-rickmorty-viper.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -518,6 +588,7 @@
 		};
 		567B811A2B6271C8005F676D /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 7CEF4376AF4C2FD688C1E89D /* Pods-rickmorty-viper.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;

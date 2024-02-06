@@ -15,10 +15,7 @@ class CharacterCollectionViewCell: UICollectionViewCell {
     @IBOutlet weak var statusLabel: UILabel!
     
     static let identifier = String(describing: CharacterCollectionViewCell.self)
-    static func nib() -> UINib {
-        return UINib(nibName: identifier, bundle: nil)
-    }
-    
+   
     override func awakeFromNib() {
         super.awakeFromNib()
         contentView.backgroundColor = .systemBackground
@@ -43,9 +40,12 @@ class CharacterCollectionViewCell: UICollectionViewCell {
         statusLabel.text = nil
     }
     
-    // MARK: - private
-    
     // MARK: - public
+    
+    static func nib() -> UINib {
+        return UINib(nibName: identifier, bundle: nil)
+    }
+    
     public func configure(with character: Character) {
         nameLabel.text = character.name
         statusLabel.text = "Status: \(character.status)"

@@ -17,6 +17,7 @@ class CharacterDetailRouter {
         let interactor = CharacterDetailInteractor()
         let presenter = CharacterDetailPresenter(interactor: interactor)
         
+        view.navigationItem.largeTitleDisplayMode = .never
         view.presenter = presenter
         view.character = data
         return view

@@ -22,7 +22,7 @@ class CharacterScreenView: UIViewController {
         }
     }
     
-    private var charactersList = PublishSubject<[Character]>()
+//    private var charactersList = PublishSubject<[Character]>()
     public var isShowSpinner: Bool {
         return apiInfo?.next != nil
     }
@@ -33,12 +33,11 @@ class CharacterScreenView: UIViewController {
         navigationItem.title = "Character"
         view.backgroundColor = .systemBackground
         setupCollectionView()
-        
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        setupFetchData()
+        fetchInitialCharacters()
     }
     
     static func instance(withPresenter presenter: CharacterScreenPresenter) -> CharacterScreenView {
@@ -52,7 +51,7 @@ class CharacterScreenView: UIViewController {
     }
     
     // MARK: - Private
-    private func setupFetchData() {
+    private func fetchInitialCharacters() {
         presenter?.fetchInitialCharacter()
             .asObservable()
             .subscribe(onNext: { entity in
@@ -66,20 +65,20 @@ class CharacterScreenView: UIViewController {
     }
     
     private func setupCollectionView() {
+        characterCollectionView.delegate = self
+        characterCollectionView.dataSource = self
+        
         let width = (UIScreen.main.bounds.width - 30) / 2
         let layout = UICollectionViewFlowLayout()
         layout.itemSize = CGSize(width: width, height: width * 0.3)
         characterCollectionView.collectionViewLayout = layout
         
         characterCollectionView.register(CharacterCollectionViewCell.nib(), forCellWithReuseIdentifier: CharacterCollectionViewCell.identifier)
-        // register the loading spinner when load data in footer that used in RMCharacterListView
         
+        // register the loading spinner when load data in footer that used in RMCharacterListView
         characterCollectionView.register(RMFooterLoadingCollectionReusableView.self,
                                 forSupplementaryViewOfKind: UICollectionView.elementKindSectionFooter,
                                 withReuseIdentifier: RMFooterLoadingCollectionReusableView.identifier)
-        
-        characterCollectionView.delegate = self
-        characterCollectionView.dataSource = self
     }
     
     private func fetchMoreCharacters() {

@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import RxSwift
 
 class CharacterDetailPresenter {
     
@@ -14,6 +15,10 @@ class CharacterDetailPresenter {
     
     init(interactor: CharacterDetailInteractor) {
         self.interactor = interactor
+    }
+    
+    func fetchEpisode(from url: URL) -> Observable<Episode?> {
+        return interactor.fetchEpisode(from: url)
     }
     
 }

@@ -13,9 +13,3 @@ enum ServiceError: Error {
     case failedToGetData
     case invalidUrl
 }
-
-
-
-
-
-

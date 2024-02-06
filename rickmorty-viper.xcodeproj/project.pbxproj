@@ -185,19 +185,18 @@
 		561FD1912B70C65800D2B5E0 /* Cells */ = {
 			isa = PBXGroup;
 			children = (
-				561FD1922B70C66700D2B5E0 /* EpisodeCollectionCell */,
 				561FD1862B70BCAE00D2B5E0 /* SingleInfoCell */,
 			);
 			path = Cells;
 			sourceTree = "<group>";
 		};
-		561FD1922B70C66700D2B5E0 /* EpisodeCollectionCell */ = {
+		561FD1922B70C66700D2B5E0 /* EpisodeCell */ = {
 			isa = PBXGroup;
 			children = (
 				561FD1932B70C68500D2B5E0 /* EpisodeCollectionViewCell.swift */,
 				561FD1942B70C68500D2B5E0 /* EpisodeCollectionViewCell.xib */,
 			);
-			path = EpisodeCollectionCell;
+			path = EpisodeCell;
 			sourceTree = "<group>";
 		};
 		562FA8782B71DB6E0079E3A1 /* CharacterInfoCell */ = {
@@ -224,8 +223,7 @@
 		5634B5B82B63687100382506 /* EpisodeScreen */ = {
 			isa = PBXGroup;
 			children = (
-				5634B5D92B6368DB00382506 /* EpisodeScreenView.storyboard */,
-				5634B5D22B6368CF00382506 /* EpisodeScreenView.swift */,
+				5660553E2B723E93004615B3 /* View */,
 				5634B5CF2B6368CF00382506 /* EpisodeScreenPresenter.swift */,
 				5634B5D12B6368CF00382506 /* EpisodeScreenInteractor.swift */,
 				5634B5D32B6368CF00382506 /* EpisodeScreenEntity.swift */,
@@ -291,6 +289,23 @@
 			path = View;
 			sourceTree = "<group>";
 		};
+		5660553C2B7238F6004615B3 /* EpisodeDetail */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = EpisodeDetail;
+			sourceTree = "<group>";
+		};
+		5660553E2B723E93004615B3 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				561FD1922B70C66700D2B5E0 /* EpisodeCell */,
+				5634B5D92B6368DB00382506 /* EpisodeScreenView.storyboard */,
+				5634B5D22B6368CF00382506 /* EpisodeScreenView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
 		567B80FB2B6271C6005F676D = {
 			isa = PBXGroup;
 			children = (
@@ -329,6 +344,7 @@
 				56E466102B6CE62300BB9EFD /* CharacterDetail */,
 				5634B5AB2B63673100382506 /* CharacterScreen */,
 				5634B5B82B63687100382506 /* EpisodeScreen */,
+				5660553C2B7238F6004615B3 /* EpisodeDetail */,
 				5634B5B92B63688800382506 /* LocationScreen */,
 				567B811C2B627273005F676D /* MainTabbar */,
 				5634B5BA2B63689200382506 /* SettingScreen */,

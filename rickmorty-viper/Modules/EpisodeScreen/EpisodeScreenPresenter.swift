@@ -6,8 +6,9 @@
 //
 
 import Foundation
+import RxSwift
 
-class EpisodeScreenPresenter {
+class EpisodeScreenPresenter: BasePresenter {
     
     private let interactor: EpisodeScreenInteractor
     private let router = EpisodeScreenRouter()
@@ -16,4 +17,11 @@ class EpisodeScreenPresenter {
         self.interactor = interactor
     }
     
+    func fetchInitialEpisodes() -> Observable<EpisodeEntity?> {
+        return interactor.fetchInitialEpisode()
+    }
+    
+    func fetchMoreEpisodes(from url: URL?) -> Observable<Episode?> {
+        return interactor.fetchMoreEpisode(from: url)
+    }
 }

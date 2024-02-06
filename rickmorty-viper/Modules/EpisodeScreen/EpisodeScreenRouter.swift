@@ -7,11 +7,28 @@
 
 import UIKit
 
+
+
+//static func instance(withPresenter presenter: EpisodeScreenPresenter) -> EpisodeScreenView {
+//    let storyboardId = String(String(describing: EpisodeScreenView.self))
+//    let storyboard = UIStoryboard(name: storyboardId, bundle: nil)
+//    guard let anyView = storyboard.instantiateViewController(withIdentifier: storyboardId) as? EpisodeScreenView else {
+//        fatalError("Error loading Storyboard")
+//    }
+//    anyView.presenter = presenter
+//    return anyView
+//}
 class EpisodeScreenRouter {
     func showView() -> EpisodeScreenView {
+        let storyboardId = String(describing: EpisodeScreenView.self)
+        let storyboard = UIStoryboard(name: storyboardId, bundle: nil)
+        guard let view = storyboard.instantiateViewController(withIdentifier: storyboardId) as? EpisodeScreenView else {
+            fatalError("Error loading Storyboard")
+        }
         let interactor = EpisodeScreenInteractor()
         let presenter = EpisodeScreenPresenter(interactor: interactor)
-        let view = EpisodeScreenView.instance(withPresenter: presenter)
+        view.presenter = presenter
+        view.navigationItem.largeTitleDisplayMode = .automatic
         return view
     }
     

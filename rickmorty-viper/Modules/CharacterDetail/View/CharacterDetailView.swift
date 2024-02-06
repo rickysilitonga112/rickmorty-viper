@@ -46,9 +46,9 @@ class CharacterDetailView: UIViewController {
             if let url = URL(string: urlString) {
                 presenter.fetchEpisode(from: url)
                     .asObservable()
-                    .subscribe(onNext: { episode in
+                    .subscribe(onNext: { [weak self] episode in
                         if let episode = episode {
-                            self.episodes.append(episode)
+                            self?.episodes.append(episode)
                         }
                     }, onError: { error in
                         print(error)

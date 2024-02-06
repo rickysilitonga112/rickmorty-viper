@@ -51,19 +51,6 @@ class CharacterScreenView: UIViewController {
     }
     
     // MARK: - Private
-    private func fetchInitialCharacters() {
-        presenter?.fetchInitialCharacter()
-            .asObservable()
-            .subscribe(onNext: { entity in
-                if let characters = entity?.results {
-                    self.apiInfo = entity?.info
-                    self.characters = characters
-                }
-            }, onError: { error in
-                print(String(describing: error.localizedDescription))
-            }).disposed(by: bag)
-    }
-    
     private func setupCollectionView() {
         characterCollectionView.delegate = self
         characterCollectionView.dataSource = self
@@ -79,6 +66,19 @@ class CharacterScreenView: UIViewController {
         characterCollectionView.register(RMFooterLoadingCollectionReusableView.self,
                                 forSupplementaryViewOfKind: UICollectionView.elementKindSectionFooter,
                                 withReuseIdentifier: RMFooterLoadingCollectionReusableView.identifier)
+    }
+    
+    private func fetchInitialCharacters() {
+        presenter?.fetchInitialCharacter()
+            .asObservable()
+            .subscribe(onNext: { [weak self] entity in
+                if let entity = entity {
+                    self?.apiInfo = entity.info
+                    self?.characters = entity.results
+                }
+            }, onError: { error in
+                print(String(describing: error.localizedDescription))
+            }).disposed(by: bag)
     }
     
     private func fetchMoreCharacters() {
@@ -113,7 +113,6 @@ class CharacterScreenView: UIViewController {
 // MARK: - CollectionView Delegate
 extension CharacterScreenView: UICollectionViewDelegate {
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        // TODO: - goto detail view controller
         collectionView.deselectItem(at: indexPath, animated: true)
         
         guard let presenter = presenter,
@@ -160,10 +159,10 @@ extension CharacterScreenView: UIScrollViewDelegate {
             return
         }
         
-            let offset = scrollView.contentOffset.y
-            let totalContentHeight = scrollView.contentSize.height
-            let totalScrollViewFixedHeight = scrollView.frame.size.height
-
+        let offset = scrollView.contentOffset.y
+        let totalContentHeight = scrollView.contentSize.height
+        let totalScrollViewFixedHeight = scrollView.frame.size.height
+        
         /// this code to fix redundant fetching a more character
         guard offset > 0 else {
             return

@@ -21,4 +21,8 @@ class CharacterDetailPresenter {
         return interactor.fetchEpisode(from: url)
     }
     
+    func navigateToDetailEpisode(from navigation: UINavigationController,
+                                   with data: Episode) {
+        router.navigateToDetailEpisode(from: navigation, with: data)
+    }
 }

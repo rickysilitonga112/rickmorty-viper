@@ -114,15 +114,24 @@ class CharacterDetailView: UIViewController {
             return createEpisodesSectionLayout()
         }
     }
-    
-    // MARK: - Public
 }
 
 
 // MARK: - CollectionViewDelegate
 extension CharacterDetailView: UICollectionViewDelegate {
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        guard let presenter = presenter,
+              let navigation = navigationController else {
+            return
+        }
         collectionView.deselectItem(at: indexPath, animated: true)
+        let section = sections[indexPath.section]
+        switch section {
+        case .photo, .info:
+            break
+        case .episodes:
+            presenter.navigateToDetailEpisode(from: navigation, with: episodes[indexPath.row])
+        }
     }
 }
 

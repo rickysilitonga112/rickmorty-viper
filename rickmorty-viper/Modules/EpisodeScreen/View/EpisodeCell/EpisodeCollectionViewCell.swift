@@ -39,8 +39,8 @@ class EpisodeCollectionViewCell: UICollectionViewCell {
     }
     
     public func configure(with episode: Episode) {
-        seasonLabel.text = episode.episode
-        nameLabel.text = "Episode \(episode.name)"
+        seasonLabel.text = "Episode \(episode.episode)"
+        nameLabel.text = episode.name
         airDateLabel.text = "Aired on \(episode.air_date)"
     }
 }

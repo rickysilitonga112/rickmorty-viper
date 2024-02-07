@@ -53,9 +53,9 @@ class ApiManager {
         guard let url = self.request(from: request) else {
             return Observable.error(ServiceError.invalidUrl)
         }
+        
         return Observable.create { observer in
             let session = Session.default
-            
             return session.request(url)
                 .rx
                 .responseData()

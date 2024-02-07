@@ -8,7 +8,7 @@
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
             uuid = "8473A404-E1DE-4D01-9ACF-448A0393616C"
-            shouldBeEnabled = "Yes"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "rickmorty-viper/Networking/ApiManager.swift"
@@ -50,6 +50,69 @@
             endingLineNumber = "51"
             landmarkName = "setupFetchData()"
             landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "1AF2BA67-E569-4044-A3CE-C48C7A1459D8"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "rickmorty-viper/Modules/EpisodeDetail/EpisodeDetailView.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "98"
+            endingLineNumber = "98"
+            landmarkName = "fetchCharacters()"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "1AF2BA67-E569-4044-A3CE-C48C7A1459D8 - 56927e2e65d0a6b5"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (Swift.Optional&lt;rickmorty_viper.Character&gt;) -&gt; () in rickmorty_viper.EpisodeDetailView.fetchCharacters() -&gt; ()"
+                  moduleName = "rickmorty-viper"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/rickysilitonga/Documents/Development/iOS%20Development/iOS%20Dev%20Big%20Project/rickmorty-viper/rickmorty-viper/Modules/EpisodeDetail/EpisodeDetailView.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "95"
+                  endingLineNumber = "95"
+                  offsetFromSymbolStart = "332">
+               </Location>
+               <Location
+                  uuid = "1AF2BA67-E569-4044-A3CE-C48C7A1459D8 - 56927e2e65d0a6b5"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (Swift.Optional&lt;rickmorty_viper.Character&gt;) -&gt; () in rickmorty_viper.EpisodeDetailView.fetchCharacters() -&gt; ()"
+                  moduleName = "rickmorty-viper"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/rickysilitonga/Documents/Development/iOS%20Development/iOS%20Dev%20Big%20Project/rickmorty-viper/rickmorty-viper/Modules/EpisodeDetail/EpisodeDetailView.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "95"
+                  endingLineNumber = "95"
+                  offsetFromSymbolStart = "140">
+               </Location>
+               <Location
+                  uuid = "1AF2BA67-E569-4044-A3CE-C48C7A1459D8 - 56927e2e65d0a6d6"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (Swift.Optional&lt;rickmorty_viper.Character&gt;) -&gt; () in rickmorty_viper.EpisodeDetailView.fetchCharacters() -&gt; ()"
+                  moduleName = "rickmorty-viper"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/rickysilitonga/Documents/Development/iOS%20Development/iOS%20Dev%20Big%20Project/rickmorty-viper/rickmorty-viper/Modules/EpisodeDetail/EpisodeDetailView.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "94"
+                  endingLineNumber = "94"
+                  offsetFromSymbolStart = "128">
+               </Location>
+            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>

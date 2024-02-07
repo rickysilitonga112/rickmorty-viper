@@ -7,17 +7,6 @@
 
 import UIKit
 
-
-
-//static func instance(withPresenter presenter: EpisodeScreenPresenter) -> EpisodeScreenView {
-//    let storyboardId = String(String(describing: EpisodeScreenView.self))
-//    let storyboard = UIStoryboard(name: storyboardId, bundle: nil)
-//    guard let anyView = storyboard.instantiateViewController(withIdentifier: storyboardId) as? EpisodeScreenView else {
-//        fatalError("Error loading Storyboard")
-//    }
-//    anyView.presenter = presenter
-//    return anyView
-//}
 class EpisodeScreenRouter {
     func showView() -> EpisodeScreenView {
         let storyboardId = String(describing: EpisodeScreenView.self)
@@ -31,6 +20,15 @@ class EpisodeScreenRouter {
         view.navigationItem.largeTitleDisplayMode = .automatic
         return view
     }
+    
+    func navigateToDetailEpisode(from navigation: UINavigationController,
+                                   with data: Episode) {
+        let episodeDetailView = EpisodeDetailRouter().showView(with: data)
+        
+        // TODO: - set the character data
+        navigation.pushViewController(episodeDetailView, animated: true)
+    }
+    
     
     /*
     func pushToSecondVC(using navigation: UINavigationController, with data: AnyEntity) {

@@ -108,8 +108,12 @@ class EpisodeScreenView: UIViewController {
 extension EpisodeScreenView: UICollectionViewDelegate {
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         collectionView.deselectItem(at: indexPath, animated: true)
+        guard let presenter = presenter,
+              let navigation = navigationController else {
+            return
+        }
         
-        // TODO: Go to detail vc
+        presenter.navigateToDetailEpisode(from: navigation, with: episodes[indexPath.row])
     }
 }
 

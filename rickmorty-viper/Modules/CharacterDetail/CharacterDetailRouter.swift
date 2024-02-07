@@ -23,6 +23,13 @@ class CharacterDetailRouter {
         return view
     }
     
+    func navigateToDetailEpisode(from navigation: UINavigationController,
+                                   with data: Episode) {
+        let episodeDetailView = EpisodeDetailRouter().showView(with: data)
+        
+        navigation.pushViewController(episodeDetailView, animated: true)
+    }
+    
     /*
     func pushToSecondVC(using navigation: UINavigationController, with data: AnyEntity) {
         let secondVCRouter = SeconVCRouter.showView(with: data)

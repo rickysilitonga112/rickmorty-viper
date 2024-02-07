@@ -24,4 +24,9 @@ class EpisodeScreenPresenter: BasePresenter {
     func fetchMoreEpisodes(from url: URL?) -> Observable<EpisodeEntity?> {
         return interactor.fetchMoreEpisode(from: url)
     }
+    
+    func navigateToDetailEpisode(from navigation: UINavigationController,
+                                   with data: Episode) {
+        router.navigateToDetailEpisode(from: navigation, with: data)
+    }
 }

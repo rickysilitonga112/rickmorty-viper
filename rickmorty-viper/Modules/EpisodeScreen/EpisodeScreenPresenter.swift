@@ -21,7 +21,7 @@ class EpisodeScreenPresenter: BasePresenter {
         return interactor.fetchInitialEpisode()
     }
     
-    func fetchMoreEpisodes(from url: URL?) -> Observable<Episode?> {
+    func fetchMoreEpisodes(from url: URL?) -> Observable<EpisodeEntity?> {
         return interactor.fetchMoreEpisode(from: url)
     }
 }

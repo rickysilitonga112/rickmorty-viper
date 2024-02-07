@@ -49,7 +49,7 @@ class EpisodeScreenView: UIViewController {
         
         let bounds = UIScreen.main.bounds
         let layout = UICollectionViewFlowLayout()
-        layout.itemSize = CGSize(width: bounds.width - 20, height: 100)
+        layout.itemSize = CGSize(width: bounds.width - 20, height: 120)
         
         collectionView.collectionViewLayout = layout
         
@@ -81,7 +81,26 @@ class EpisodeScreenView: UIViewController {
     }
     
     private func fetchMoreEpisodes() {
-        
+        guard let presenter = presenter,
+              let urlString = apiInfo?.next,
+              let url = URL(string: urlString) else {
+            return
+        }
+        presenter.fetchMoreEpisodes(from: url)
+            .asObservable()
+            .subscribe { [weak self] entity in
+                guard let self = self else { return }
+                print("Fetching episode from : \(url)")
+                
+                if let entity = entity {
+                    self.isLoadingMoreEpisodes = false
+                    self.apiInfo = entity.info
+                    self.episodes.append(contentsOf: entity.results)
+                }
+                
+            } onError: { error in
+                print("Error fetch more episodes with error\(String(describing: error.localizedDescription))")
+            }.disposed(by: bag)
     }
 }
 
@@ -109,7 +128,7 @@ extension EpisodeScreenView: UICollectionViewDataSource {
     }
 }
 
-// MARK: - CollectionView DataSource
+// MARK: - Scroll View Delegate
 extension EpisodeScreenView: UIScrollViewDelegate {
     func scrollViewDidScroll(_ scrollView: UIScrollView) {
         guard isShowSpinner,
@@ -131,7 +150,7 @@ extension EpisodeScreenView: UIScrollViewDelegate {
             self.isLoadingMoreEpisodes = true
             
             Timer.scheduledTimer(withTimeInterval: 0.2, repeats: false) { [weak self] t in
-//                self?.fetchMoreEpisodes()
+                self?.fetchMoreEpisodes()
                 t.invalidate()
             }
             
@@ -139,13 +158,36 @@ extension EpisodeScreenView: UIScrollViewDelegate {
     }
 }
 
+// MARK: - CollectionView Delegate Flow Layout
+extension EpisodeScreenView: UICollectionViewDelegateFlowLayout {
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        let bounds = UIScreen.main.bounds
+        let width = bounds.width - 20
+        return CGSize(width: width , height: 120)
+    }
+}
 
 // MARK: - Footer spinner
 extension EpisodeScreenView {
+    func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
+        guard kind == UICollectionView.elementKindSectionFooter,
+              let footer = collectionView.dequeueReusableSupplementaryView(
+                ofKind: kind,
+                withReuseIdentifier: RMFooterLoadingCollectionReusableView.identifier,
+                for: indexPath) as? RMFooterLoadingCollectionReusableView else {
+            fatalError("Unsopported")
+        }
+        
+        footer.startAnimating()
+        
+        return footer
+    }
+    
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, referenceSizeForFooterInSection section: Int) -> CGSize {
         guard isShowSpinner else {
             return .zero
         }
+        print("Showing spinner")
         
         return CGSize(
             width: collectionView.frame.width - 20,

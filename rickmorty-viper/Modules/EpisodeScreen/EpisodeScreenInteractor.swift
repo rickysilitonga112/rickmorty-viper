@@ -22,8 +22,8 @@ class EpisodeScreenInteractor: BaseInteractor {
         return subject
     }
     
-    func fetchMoreEpisode(from url: URL?) -> PublishSubject<Episode?> {
-        let subject = PublishSubject<Episode?>()
+    func fetchMoreEpisode(from url: URL?) -> PublishSubject<EpisodeEntity?> {
+        let subject = PublishSubject<EpisodeEntity?>()
         
         guard let url = url else {
             subject.onError(ServiceError.invalidUrl)
@@ -35,7 +35,7 @@ class EpisodeScreenInteractor: BaseInteractor {
             return subject
         }
         api.requestAPI(request)
-            .subscribe { (data: Episode) in
+            .subscribe { (data: EpisodeEntity) in
                 subject.onNext(data)
             } onError: { error in
                 subject.onError(error)

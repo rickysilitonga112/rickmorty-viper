@@ -12,13 +12,20 @@ class CharacterScreenView: UIViewController {
     var bag = DisposeBag()
     
     @IBOutlet weak var characterCollectionView: UICollectionView!
+    @IBOutlet weak var spinner: UIActivityIndicatorView!
     
     private var presenter: CharacterScreenPresenter?
     private var isLoadingMoreCharacters = false
     public var apiInfo: CharacterEntity.Info? = nil
     private var characters: [Character] = [] {
         didSet {
+            spinner.stopAnimating()
             characterCollectionView.reloadData()
+            characterCollectionView.isHidden = false
+
+            UIView.animate(withDuration: 0.4) {
+                self.characterCollectionView.alpha = 1
+            }
         }
     }
     
@@ -32,6 +39,8 @@ class CharacterScreenView: UIViewController {
         super.viewDidLoad()
         navigationItem.title = "Character"
         view.backgroundColor = .systemBackground
+        
+        setupView()
         setupCollectionView()
     }
     
@@ -51,6 +60,16 @@ class CharacterScreenView: UIViewController {
     }
     
     // MARK: - Private
+    private func setupView() {
+        characterCollectionView.alpha = 0
+        characterCollectionView.isHidden = true
+        
+        // spinner
+        spinner.style = .large
+        spinner.hidesWhenStopped = true
+        spinner.startAnimating()
+    }
+    
     private func setupCollectionView() {
         characterCollectionView.delegate = self
         characterCollectionView.dataSource = self
@@ -104,9 +123,6 @@ class CharacterScreenView: UIViewController {
                 fatalError("Error fetch more characters with error \(error.localizedDescription)..")
             }).disposed(by: bag)
     }
-    
-    // MARK: - Public
-    
 }
 
 // MARK: - CollectionView Delegate

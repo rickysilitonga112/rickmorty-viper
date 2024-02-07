@@ -6,8 +6,9 @@
 //
 
 import Foundation
+import RxSwift
 
-class LocationScreenPresenter {
+class LocationScreenPresenter: BasePresenter {
     
     private let interactor: LocationScreenInteractor
     private let router = LocationScreenRouter()
@@ -16,4 +17,11 @@ class LocationScreenPresenter {
         self.interactor = interactor
     }
     
+    func fetchInitialLocations() -> Observable<LocationEntity?> {
+        return interactor.fetchInitialLocations()
+    }
+    
+    func fetchMoreLocations(from url: URL?) -> Observable<LocationEntity?> {
+        return interactor.fetchMoreLocations(from: url)
+    }
 }

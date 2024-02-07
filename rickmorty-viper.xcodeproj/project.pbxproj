@@ -247,8 +247,7 @@
 		5634B5B92B63688800382506 /* LocationScreen */ = {
 			isa = PBXGroup;
 			children = (
-				5634B5DB2B6368F200382506 /* LocationScreenView.storyboard */,
-				5634B5C82B6368C200382506 /* LocationScreenView.swift */,
+				566055522B739732004615B3 /* View */,
 				5634B5C52B6368C200382506 /* LocationScreenPresenter.swift */,
 				5634B5C72B6368C200382506 /* LocationScreenInteractor.swift */,
 				5634B5C92B6368C200382506 /* LocationScreenEntity.swift */,
@@ -320,6 +319,15 @@
 				561FD1922B70C66700D2B5E0 /* EpisodeCell */,
 				5634B5D92B6368DB00382506 /* EpisodeScreenView.storyboard */,
 				5634B5D22B6368CF00382506 /* EpisodeScreenView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		566055522B739732004615B3 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				5634B5DB2B6368F200382506 /* LocationScreenView.storyboard */,
+				5634B5C82B6368C200382506 /* LocationScreenView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";

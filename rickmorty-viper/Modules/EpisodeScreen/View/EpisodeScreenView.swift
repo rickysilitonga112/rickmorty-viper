@@ -9,8 +9,9 @@ import UIKit
 import RxSwift
 
 class EpisodeScreenView: UIViewController {
-    
     @IBOutlet weak var collectionView: UICollectionView!
+    @IBOutlet weak var spinner: UIActivityIndicatorView!
+    
     var presenter: EpisodeScreenPresenter?
     
     let bag = DisposeBag()
@@ -18,7 +19,12 @@ class EpisodeScreenView: UIViewController {
     public var apiInfo: EpisodeEntity.Info? = nil
     private var episodes: [Episode] = [] {
         didSet {
+            spinner.stopAnimating()
             collectionView.reloadData()
+            collectionView.isHidden = false
+            UIView.animate(withDuration: 0.4) {
+                self.collectionView.alpha = 1
+            }
         }
     }
     
@@ -43,6 +49,16 @@ class EpisodeScreenView: UIViewController {
     }
     
     // MARK: - Private
+    private func setupView() {
+        collectionView.isHidden = true
+        collectionView.alpha = 0
+        
+        // spinner
+        spinner.style = .large
+        spinner.hidesWhenStopped = true
+        spinner.startAnimating()
+    }
+    
     private func setupCollectionView() {
         collectionView.delegate = self
         collectionView.dataSource = self

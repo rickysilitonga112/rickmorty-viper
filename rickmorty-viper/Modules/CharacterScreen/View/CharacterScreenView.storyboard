@@ -27,18 +27,28 @@
                                 </collectionViewFlowLayout>
                                 <cells/>
                             </collectionView>
+                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="large" translatesAutoresizingMaskIntoConstraints="NO" id="QeV-lJ-Rdu">
+                                <rect key="frame" x="146.66666666666666" y="376" width="100" height="100"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="100" id="EG9-vA-3Pu"/>
+                                    <constraint firstAttribute="width" constant="100" id="hTd-rW-pWx"/>
+                                </constraints>
+                            </activityIndicatorView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="vDu-zF-Fre"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
+                            <constraint firstItem="QeV-lJ-Rdu" firstAttribute="centerX" secondItem="5EZ-qb-Rvc" secondAttribute="centerX" id="DyC-2h-df0"/>
                             <constraint firstItem="ofQ-1j-Fgb" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" id="Hud-nS-veH"/>
                             <constraint firstItem="ofQ-1j-Fgb" firstAttribute="trailing" secondItem="vDu-zF-Fre" secondAttribute="trailing" constant="-10" id="TBX-Pi-bBP"/>
                             <constraint firstItem="ofQ-1j-Fgb" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="10" id="UDX-UD-O89"/>
                             <constraint firstItem="ofQ-1j-Fgb" firstAttribute="bottom" secondItem="vDu-zF-Fre" secondAttribute="bottom" id="e9X-K7-6vu"/>
+                            <constraint firstItem="QeV-lJ-Rdu" firstAttribute="centerY" secondItem="5EZ-qb-Rvc" secondAttribute="centerY" id="ite-Nv-m1b"/>
                         </constraints>
                     </view>
                     <connections>
                         <outlet property="characterCollectionView" destination="ofQ-1j-Fgb" id="M1l-0X-dy9"/>
+                        <outlet property="spinner" destination="QeV-lJ-Rdu" id="JMh-9g-Ivb"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

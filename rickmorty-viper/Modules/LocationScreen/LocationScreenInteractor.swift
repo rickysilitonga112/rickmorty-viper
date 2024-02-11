@@ -11,7 +11,7 @@ import RxSwift
 class LocationScreenInteractor: BaseInteractor {
     func fetchInitialLocations() -> PublishSubject<LocationEntity?> {
         let subject = PublishSubject<LocationEntity?>()
-        api.requestAPI(.listCharactersRequests)
+        api.requestAPI(.listLocationsRequest)
             .subscribe { (data: LocationEntity) in
                 subject.onNext(data)
             } onError: { error in

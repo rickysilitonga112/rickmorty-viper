@@ -13,7 +13,7 @@ class LocationScreenView: UIViewController {
     @IBOutlet weak var spinner: UIActivityIndicatorView!
     
     private let bag = DisposeBag()
-    private var presenter: LocationScreenPresenter?
+    var presenter: LocationScreenPresenter?
     
     private var apiInfo: LocationEntity.Info? = nil
     private var isLoadingMoreLocations = false
@@ -41,20 +41,8 @@ class LocationScreenView: UIViewController {
         view.backgroundColor = .systemBackground
         
         setupView()
-        setupTableView()
         setupFetchData()
     }
-    
-    static func instance(withPresenter presenter: LocationScreenPresenter) -> LocationScreenView {
-        let storyboardId = String(describing: LocationScreenView.self)
-        let storyboard = UIStoryboard(name: storyboardId, bundle: nil)
-        guard let anyView = storyboard.instantiateViewController(withIdentifier: storyboardId) as? LocationScreenView else {
-            fatalError("Error loading Storyboard")
-        }
-        anyView.presenter = presenter
-        return anyView
-    }
-
     
     // MARK: - Private
     private func setupView() {
@@ -65,11 +53,15 @@ class LocationScreenView: UIViewController {
         spinner.hidesWhenStopped = true
         spinner.startAnimating()
         spinner.style = .large
+        
+        setupTableView()
     }
     
     private func setupTableView() {
         tableView.delegate = self
         tableView.dataSource = self
+        
+        tableView.register(LocationTableViewCell.nib(), forCellReuseIdentifier: LocationTableViewCell.identifier)
     }
     
     private func setupFetchData() {
@@ -86,7 +78,25 @@ class LocationScreenView: UIViewController {
     }
     
     private func fetchMoreLocations() {
-        print("Should fetch more locations....")
+        guard let urlString = apiInfo?.next else {
+            return
+        }
+        let nextUrl = URL(string: urlString)
+        presenter?.fetchMoreLocations(from: nextUrl)
+            .asObservable()
+            .subscribe(onNext: {[weak self] entity in
+                guard let self = self,
+                      let entity = entity else {
+                    return
+                }
+                self.isLoadingMoreLocations = false
+                self.apiInfo = entity.info
+                self.locations.append(contentsOf: entity.results)
+                
+            }, onError: { error in
+                fatalError("Error fetch more characters with error \(error.localizedDescription)..")
+            }).disposed(by: bag)
+        
     }
 }
 
@@ -107,7 +117,10 @@ extension LocationScreenView: UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "", for: indexPath)
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: LocationTableViewCell.identifier, for: indexPath) as? LocationTableViewCell else {
+            fatalError("Error parse LocationTableViewCell")
+        }
+        cell.configure(with: locations[indexPath.row])
         return cell
     }
 }

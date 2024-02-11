@@ -12,7 +12,11 @@ class LocationScreenRouter {
     func showView() -> LocationScreenView {
         let interactor = LocationScreenInteractor()
         let presenter = LocationScreenPresenter(interactor: interactor)
-        let view = LocationScreenView.instance(withPresenter: presenter)
+        let storyboard = UIStoryboard(name: String(describing: LocationScreenView.self), bundle: nil)
+        guard let view = storyboard.instantiateViewController(withIdentifier: String(describing: LocationScreenView.self)) as? LocationScreenView else {
+            fatalError("Error loading storyboard")
+        }
+        view.presenter = presenter
         return view
     }
 

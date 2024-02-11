@@ -51,6 +51,8 @@
 		5660554B2B733408004615B3 /* EpisodeDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 566055462B733408004615B3 /* EpisodeDetailView.swift */; };
 		5660554C2B733408004615B3 /* EpisodeDetailEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 566055472B733408004615B3 /* EpisodeDetailEntity.swift */; };
 		566055502B733CAE004615B3 /* EpisodeDetailView.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5660554F2B733CAE004615B3 /* EpisodeDetailView.storyboard */; };
+		566055552B75124A004615B3 /* LocationTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 566055532B75124A004615B3 /* LocationTableViewCell.swift */; };
+		566055562B75124A004615B3 /* LocationTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 566055542B75124A004615B3 /* LocationTableViewCell.xib */; };
 		567B81082B6271C6005F676D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 567B81072B6271C6005F676D /* AppDelegate.swift */; };
 		567B810A2B6271C6005F676D /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 567B81092B6271C6005F676D /* SceneDelegate.swift */; };
 		567B81112B6271C8005F676D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 567B81102B6271C8005F676D /* Assets.xcassets */; };
@@ -122,6 +124,8 @@
 		566055462B733408004615B3 /* EpisodeDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EpisodeDetailView.swift; sourceTree = "<group>"; };
 		566055472B733408004615B3 /* EpisodeDetailEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EpisodeDetailEntity.swift; sourceTree = "<group>"; };
 		5660554F2B733CAE004615B3 /* EpisodeDetailView.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = EpisodeDetailView.storyboard; sourceTree = "<group>"; };
+		566055532B75124A004615B3 /* LocationTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationTableViewCell.swift; sourceTree = "<group>"; };
+		566055542B75124A004615B3 /* LocationTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LocationTableViewCell.xib; sourceTree = "<group>"; };
 		567B81042B6271C6005F676D /* rickmorty-viper.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "rickmorty-viper.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		567B81072B6271C6005F676D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		567B81092B6271C6005F676D /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -326,10 +330,20 @@
 		566055522B739732004615B3 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				566055572B751260004615B3 /* LocationCell */,
 				5634B5DB2B6368F200382506 /* LocationScreenView.storyboard */,
 				5634B5C82B6368C200382506 /* LocationScreenView.swift */,
 			);
 			path = View;
+			sourceTree = "<group>";
+		};
+		566055572B751260004615B3 /* LocationCell */ = {
+			isa = PBXGroup;
+			children = (
+				566055532B75124A004615B3 /* LocationTableViewCell.swift */,
+				566055542B75124A004615B3 /* LocationTableViewCell.xib */,
+			);
+			path = LocationCell;
 			sourceTree = "<group>";
 		};
 		567B80FB2B6271C6005F676D = {
@@ -569,6 +583,7 @@
 				5660553A2B720E9E004615B3 /* CharacterDetailEpisodeCollectionViewCell.xib in Resources */,
 				562FA87C2B71DB800079E3A1 /* CharacterInfoCollectionViewCell.xib in Resources */,
 				5634B5DE2B63690600382506 /* SettingScreenView.storyboard in Resources */,
+				566055562B75124A004615B3 /* LocationTableViewCell.xib in Resources */,
 				5634B5DA2B6368DB00382506 /* EpisodeScreenView.storyboard in Resources */,
 				561FD1902B70C22100D2B5E0 /* CharacterDetailPhotoCollectionViewCell.xib in Resources */,
 				56BB54D72B6394DE00EEEA2C /* CharacterCollectionViewCell.xib in Resources */,
@@ -678,6 +693,7 @@
 				56E466192B6CE66500BB9EFD /* CharacterDetailView.swift in Sources */,
 				5634B5CC2B6368C200382506 /* LocationScreenInteractor.swift in Sources */,
 				5634B5B12B63674500382506 /* CharacterScreenPresenter.swift in Sources */,
+				566055552B75124A004615B3 /* LocationTableViewCell.swift in Sources */,
 				5634B5D52B6368CF00382506 /* EpisodeScreenRouter.swift in Sources */,
 				5660554A2B733408004615B3 /* EpisodeDetailInteractor.swift in Sources */,
 				566055492B733408004615B3 /* EpisodeDetailRouter.swift in Sources */,

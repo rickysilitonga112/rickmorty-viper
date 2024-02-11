@@ -34,7 +34,6 @@ class CharacterDetailPhotoCollectionViewCell: UICollectionViewCell {
     }
     
     public func configure(with url: URL) {
-        print("URL: \(url)")
         photoImageView.kf.setImage(with: url)
     }
 }

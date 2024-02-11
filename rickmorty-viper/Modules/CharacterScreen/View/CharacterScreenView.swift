@@ -101,24 +101,18 @@ class CharacterScreenView: UIViewController {
     }
     
     private func fetchMoreCharacters() {
-        guard let presenter = presenter,
-              let urlString = apiInfo?.next,
-              let url = URL(string: urlString) else {
-            return
-        }
-        
-        presenter.fetchMoreCharacters(from: url)
+        guard let urlString = apiInfo?.next else { return }
+        let nextUrl = URL(string: urlString)
+        presenter?.fetchMoreCharacters(from: nextUrl)
             .asObservable()
             .subscribe(onNext: {[weak self] entity in
-                guard let self = self else { return }
-                print("Fetching from: \(url.absoluteString)")
-                
-                if let entity = entity {
-                    self.isLoadingMoreCharacters = false
-                    self.apiInfo = entity.info
-                    self.characters.append(contentsOf: entity.results)
-                    
+                guard let self = self,
+                      let entity = entity else {
+                    return
                 }
+                self.isLoadingMoreCharacters = false
+                self.apiInfo = entity.info
+                self.characters.append(contentsOf: entity.results)
             }, onError: { error in
                 fatalError("Error fetch more characters with error \(error.localizedDescription)..")
             }).disposed(by: bag)

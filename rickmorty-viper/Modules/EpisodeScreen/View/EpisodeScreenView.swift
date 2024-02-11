@@ -39,17 +39,14 @@ class EpisodeScreenView: UIViewController {
         navigationItem.title = "Episode"
         view.backgroundColor = .systemBackground
         
-        setupCollectionView()
-        
-    }
-    
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
+        setupView()
         fetchInitialEpisodes()
     }
     
     // MARK: - Private
     private func setupView() {
+        setupCollectionView()
+        
         collectionView.isHidden = true
         collectionView.alpha = 0
         

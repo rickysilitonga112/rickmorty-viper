@@ -12,14 +12,11 @@ class SettingScreenRouter {
     func showView() -> SettingScreenView {
         let interactor = SettingScreenInteractor()
         let presenter = SettingScreenPresenter(interactor: interactor)
-        let view = SettingScreenView.instance(withPresenter: presenter)
+        let storyboard = UIStoryboard(name: String(describing: SettingScreenView.self), bundle: nil)
+        guard let view = storyboard.instantiateViewController(withIdentifier: String(describing: SettingScreenView.self)) as? SettingScreenView else {
+            fatalError("Error loading storyboard")
+        }
+        view.presenter = presenter
         return view
     }
-    /*
-    func pushToSecondVC(using navigation: UINavigationController, with data: AnyEntity) {
-        let secondVCRouter = SeconVCRouter.showView(with: data)
-        navigation.pushViewController(secondVCRouter, animated: true)
-    }
-     */
-    
 }

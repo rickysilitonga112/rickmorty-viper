@@ -29,8 +29,10 @@ class CharacterDetailEpisodeCollectionViewCell: UICollectionViewCell {
     
     private func setupLayer() {
         contentView.layer.borderWidth = 2
-        contentView.layer.borderColor = UIColor.secondaryLabel.cgColor
         contentView.layer.cornerRadius = 8
+        contentView.layer.borderColor = UIColor.blue.cgColor
+        
+        airDateLabel.directionalLayoutMargins = NSDirectionalEdgeInsets(top: 0, leading: 0, bottom: 4, trailing: 0)
     }
     
     // MARK: - Public

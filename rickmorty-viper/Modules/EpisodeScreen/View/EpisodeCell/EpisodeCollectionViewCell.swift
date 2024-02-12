@@ -31,6 +31,7 @@ class EpisodeCollectionViewCell: UICollectionViewCell {
         contentView.layer.borderWidth = 2
         contentView.layer.borderColor = UIColor.secondaryLabel.cgColor
         contentView.layer.cornerRadius = 8
+        contentView.layer.borderColor = UIColor.random().cgColor
     }
 
     // MARK: - Public

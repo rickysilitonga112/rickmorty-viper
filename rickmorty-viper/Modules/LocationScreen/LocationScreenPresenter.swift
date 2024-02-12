@@ -24,4 +24,10 @@ class LocationScreenPresenter: BasePresenter {
     func fetchMoreLocations(from url: URL?) -> Observable<LocationEntity?> {
         return interactor.fetchMoreLocations(from: url)
     }
+    
+    func navigateToLocationDetail(from navigation: UINavigationController,
+                                   with data: Location) {
+        router.navigateToLocationDetail(from: navigation, with: data)
+    }
+    
 }

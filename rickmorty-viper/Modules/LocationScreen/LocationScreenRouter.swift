@@ -19,11 +19,12 @@ class LocationScreenRouter {
         view.presenter = presenter
         return view
     }
-
-//    func pushToSecondVC(using navigation: UINavigationController, with data: AnyEntity) {
-//        let secondVCRouter = SeconVCRouter.showView(with: data)
-//        navigation.pushViewController(secondVCRouter, animated: true)
-//    }
     
-    
+    func navigateToLocationDetail(from navigation: UINavigationController,
+                                  with data: Location) {
+     
+        let locationDetailVC = LocationDetailRouter().showView(with: data)
+        locationDetailVC.navigationItem.largeTitleDisplayMode = .never
+        navigation.pushViewController(locationDetailVC, animated: true)   
+    }
 }

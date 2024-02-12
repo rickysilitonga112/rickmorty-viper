@@ -1,53 +1,60 @@
-// 
-//  EpisodeDetailView.swift
+//
+//  LocationDetailView.swift
 //  rickmorty-viper
 //
-//  Created by Ricky Silitonga on 07/02/24.
+//  Created by Ricky Silitonga on 11/02/24.
 //
 
 import UIKit
 import RxSwift
 
-class EpisodeDetailView: UIViewController {
+class LocationDetailView: UIViewController {
     @IBOutlet weak var collectionView: UICollectionView!
     
     private let bag = DisposeBag()
-    
-    var episode: Episode?
-    var presenter: EpisodeDetailPresenter?
-    private var sections: [EpisodeDetailSection] = []
+    private var sections: [LocationDetailSection] = []
     private var characters: [Character] = [] {
         didSet {
             collectionView.reloadData()
         }
     }
+    var presenter: LocationDetailPresenter?
+    var location: Location?
     
+    // MARK: - Lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        title = "Location Detail"
         view.backgroundColor = .systemBackground
-        navigationItem.title = "Episode Detail"
         navigationItem.largeTitleDisplayMode = .never
         
-        if let episode = episode {
-            print("URL \(episode.url)")
-        }
         
         fetchCharacters()
         setupSections()
         setupCollectionView()
     }
-
-    static func instance(withPresenter presenter: EpisodeDetailPresenter) -> EpisodeDetailView {
-        let storyboardId = String(describing: EpisodeDetailView.self)
-        let storyboard = UIStoryboard(name: storyboardId, bundle: nil)
-        guard let anyView = storyboard.instantiateViewController(withIdentifier: storyboardId) as? EpisodeDetailView else {
-            fatalError("Error loading Storyboard")
-        }
-        anyView.presenter = presenter
-        return anyView
-    }
     
     // MARK: - Private
+    private func fetchCharacters() {
+        guard let presenter = presenter,
+              let location = location else {
+            return
+        }
+        
+        for urlString in location.residents {
+            presenter.fetchCharacter(with: URL(string: urlString))
+                .asObservable()
+                .subscribe { [weak self] character in
+                    if let character = character {
+                        self?.characters.append(character)
+                    }
+                } onError: { error in
+                    print(String(describing: error))
+                } .disposed(by: bag)
+        }
+    }
+    
     private func setupCollectionView() {
         collectionView.delegate = self
         collectionView.dataSource = self
@@ -62,110 +69,83 @@ class EpisodeDetailView: UIViewController {
     }
     
     private func setupSections() {
-        guard let episode = episode else {
-            return
-        }
-        
-        var createdString = episode.created
-        if let date = CharacterInfoEntity.dateFormatter.date(from: episode.created) {
+        guard let location = location else { return }
+        var createdString = location.created
+        if let date = CharacterInfoEntity.dateFormatter.date(from: location.created) {
             createdString = CharacterInfoEntity.shortDateFormatter.string(from: date)
         }
-        
         self.sections = [
             .info(infoCells: [
-                .init(title: "Episode Name", value: episode.name),
-                .init(title: "Air Date", value: episode.air_date),
-                .init(title: "Episode", value: episode.episode),
-                .init(title: "Created", value: createdString)
+                SingleCellEntity(title: "Name", value: location.name),
+                SingleCellEntity(title: "Type", value: location.type),
+                SingleCellEntity(title: "Dimension", value: location.dimension),
+                SingleCellEntity(title: "Created", value: createdString)
             ]),
             .characters(characters: characters.compactMap({ $0 }))
         ]
     }
     
-    private func fetchCharacters() {
-        guard let presenter = presenter,
-              let episode = episode else {
-            return
-        }
-        
-        
-        for urlString in episode.characters {
-            presenter.fetchCharacter(from: URL(string: urlString))
-                .asObservable()
-                .subscribe { [weak self] character in
-                    
-                    if let character = character {
-                        self?.characters.append(character)
-                    }
-                } onError: { error in
-                    print(String(describing: error))
-                }
-                .disposed(by: bag)
-
-        }
-    }
 }
 
-extension EpisodeDetailView: UICollectionViewDelegate {
+extension LocationDetailView: UICollectionViewDelegate {
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         collectionView.deselectItem(at: indexPath, animated: true)
-        guard let presenter = presenter,
-              let navigation = navigationController else {
-            return
-        }
         
         let section = sections[indexPath.section]
-        
         switch section {
         case .info:
             break
         case .characters:
-            let character = characters[indexPath.row]
+            guard let presenter = presenter,
+                  let navigation = navigationController,
+                  !characters.isEmpty else {
+                return
+            }
             presenter.navigateToDetailCharacter(from: navigation, with: characters[indexPath.row])
         }
     }
     
 }
 
-extension EpisodeDetailView: UICollectionViewDataSource {
+extension LocationDetailView: UICollectionViewDataSource {
     func numberOfSections(in collectionView: UICollectionView) -> Int {
         return sections.count
     }
-    
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         let section = sections[section]
-        
         switch section {
-        case .info(let cells):
-            return cells.count
+        case .info(let infoCells):
+            return infoCells.count
         case .characters:
             return characters.count
         }
+        
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let section = sections[indexPath.section]
         
         switch section {
-        case .info(let cells):
+        case .info(let infoCells):
             guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: SingleInfoCollectionViewCell.identifier, for: indexPath) as? SingleInfoCollectionViewCell else {
-                fatalError("Error cast SingleInfoCollectionViewCell")
+                fatalError("Error parse SingleInfoCollectionViewCell")
             }
-            cell.configure(with: cells[indexPath.row])
+            cell.configure(with: infoCells[indexPath.row])
             return cell
+            
         case .characters:
             guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: CharacterCollectionViewCell.identifier, for: indexPath) as? CharacterCollectionViewCell else {
-                fatalError("Error cast SingleInfoCollectionViewCell")
+                fatalError("Error parse CharacterCollectionViewCell")
             }
-            cell.configure(with: self.characters[indexPath.row])
+            cell.configure(with: characters[indexPath.row])
             return cell
         }
     }
 }
 
-// MARK: EpisodeDetailLayout
-extension EpisodeDetailView {
-    func createSection(for section: Int) -> NSCollectionLayoutSection {
+// MARK: - CollectionView Layout
+extension LocationDetailView {
+    private func createSection(for section: Int) -> NSCollectionLayoutSection {
         switch sections[section] {
         case .info:
             return createInfoLayout()
@@ -174,47 +154,46 @@ extension EpisodeDetailView {
         }
     }
     
-    func createInfoLayout() -> NSCollectionLayoutSection {
-        let item = NSCollectionLayoutItem(layoutSize: .init(widthDimension: .fractionalWidth(1), heightDimension: .fractionalHeight(1)))
+    private func createInfoLayout() -> NSCollectionLayoutSection{
+        let item = NSCollectionLayoutItem(
+            layoutSize: .init(
+                widthDimension: NSCollectionLayoutDimension.fractionalWidth(1),
+                heightDimension: NSCollectionLayoutDimension.fractionalHeight(1))
+        )
         item.contentInsets = NSDirectionalEdgeInsets(
             top: 10,
             leading: 10,
             bottom: 10,
             trailing: 10
         )
-        
         let group = NSCollectionLayoutGroup.vertical(
-            layoutSize: .init(
-                widthDimension: .fractionalWidth(1.0),
-                heightDimension: .absolute(80)),
+            layoutSize: NSCollectionLayoutSize(widthDimension: NSCollectionLayoutDimension.fractionalWidth(1.0),
+                                               heightDimension: NSCollectionLayoutDimension.absolute(80)),
             subitems: [item]
         )
         let section = NSCollectionLayoutSection(group: group)
         return section
     }
     
-    func createCharacterLayout() -> NSCollectionLayoutSection {
+    private func createCharacterLayout() -> NSCollectionLayoutSection {
         let item = NSCollectionLayoutItem(
             layoutSize: .init(
-                widthDimension: .fractionalWidth(0.5),
-                heightDimension: .fractionalHeight(1)
-                )
+                widthDimension: NSCollectionLayoutDimension.fractionalWidth(0.5),
+                heightDimension: NSCollectionLayoutDimension.fractionalHeight(1))
         )
-        
         item.contentInsets = NSDirectionalEdgeInsets(
             top: 5,
             leading: 10,
             bottom: 5,
             trailing: 10
         )
-        
         let group = NSCollectionLayoutGroup.horizontal(
-            layoutSize: .init(
-                widthDimension: .fractionalWidth(1.0),
-                heightDimension: .absolute(260)),
+            layoutSize: NSCollectionLayoutSize(widthDimension: NSCollectionLayoutDimension.fractionalWidth(1),
+                                               heightDimension: NSCollectionLayoutDimension.absolute(260)),
             subitems: [item, item]
         )
         let section = NSCollectionLayoutSection(group: group)
         return section
     }
+    
 }

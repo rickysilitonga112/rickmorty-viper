@@ -104,8 +104,11 @@ class LocationScreenView: UIViewController {
 extension LocationScreenView: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
-        
-        // todo: goto detail vc
+        guard let presenter = presenter,
+              let navigation = navigationController else {
+            return
+        }
+        presenter.navigateToLocationDetail(from: navigation, with: locations[indexPath.row])
     }
     
 }

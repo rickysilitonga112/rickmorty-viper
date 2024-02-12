@@ -70,6 +70,12 @@
 		569970072B79BCAC00F19046 /* SingleSettingTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 569970052B79BCAC00F19046 /* SingleSettingTableViewCell.swift */; };
 		569970082B79BCAC00F19046 /* SingleSettingTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 569970062B79BCAC00F19046 /* SingleSettingTableViewCell.xib */; };
 		5699700A2B79F4DE00F19046 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 569970092B79F4DE00F19046 /* Extensions.swift */; };
+		569970112B7A023B00F19046 /* SearchPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5699700C2B7A023B00F19046 /* SearchPresenter.swift */; };
+		569970122B7A023B00F19046 /* SearchRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5699700D2B7A023B00F19046 /* SearchRouter.swift */; };
+		569970132B7A023B00F19046 /* SearchInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5699700E2B7A023B00F19046 /* SearchInteractor.swift */; };
+		569970142B7A023B00F19046 /* SearchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5699700F2B7A023B00F19046 /* SearchView.swift */; };
+		569970152B7A023B00F19046 /* SearchEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 569970102B7A023B00F19046 /* SearchEntity.swift */; };
+		569970172B7A032900F19046 /* SearchView.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 569970162B7A032900F19046 /* SearchView.storyboard */; };
 		56BB54D62B6394DE00EEEA2C /* CharacterCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56BB54D42B6394DE00EEEA2C /* CharacterCollectionViewCell.swift */; };
 		56BB54D72B6394DE00EEEA2C /* CharacterCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 56BB54D52B6394DE00EEEA2C /* CharacterCollectionViewCell.xib */; };
 		56BB54D92B63AFA900EEEA2C /* Endpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56BB54D82B63AFA900EEEA2C /* Endpoint.swift */; };
@@ -154,6 +160,12 @@
 		569970052B79BCAC00F19046 /* SingleSettingTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SingleSettingTableViewCell.swift; sourceTree = "<group>"; };
 		569970062B79BCAC00F19046 /* SingleSettingTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SingleSettingTableViewCell.xib; sourceTree = "<group>"; };
 		569970092B79F4DE00F19046 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
+		5699700C2B7A023B00F19046 /* SearchPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchPresenter.swift; sourceTree = "<group>"; };
+		5699700D2B7A023B00F19046 /* SearchRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchRouter.swift; sourceTree = "<group>"; };
+		5699700E2B7A023B00F19046 /* SearchInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchInteractor.swift; sourceTree = "<group>"; };
+		5699700F2B7A023B00F19046 /* SearchView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchView.swift; sourceTree = "<group>"; };
+		569970102B7A023B00F19046 /* SearchEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchEntity.swift; sourceTree = "<group>"; };
+		569970162B7A032900F19046 /* SearchView.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = SearchView.storyboard; sourceTree = "<group>"; };
 		56BB54D42B6394DE00EEEA2C /* CharacterCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterCollectionViewCell.swift; sourceTree = "<group>"; };
 		56BB54D52B6394DE00EEEA2C /* CharacterCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CharacterCollectionViewCell.xib; sourceTree = "<group>"; };
 		56BB54D82B63AFA900EEEA2C /* Endpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Endpoint.swift; sourceTree = "<group>"; };
@@ -413,6 +425,7 @@
 		567B811B2B627263005F676D /* Modules */ = {
 			isa = PBXGroup;
 			children = (
+				5699700B2B7A01F200F19046 /* Search */,
 				56E466102B6CE62300BB9EFD /* CharacterDetail */,
 				5634B5AB2B63673100382506 /* CharacterScreen */,
 				5660553C2B7238F6004615B3 /* EpisodeDetail */,
@@ -493,6 +506,19 @@
 				569970062B79BCAC00F19046 /* SingleSettingTableViewCell.xib */,
 			);
 			path = SingleSettingCell;
+			sourceTree = "<group>";
+		};
+		5699700B2B7A01F200F19046 /* Search */ = {
+			isa = PBXGroup;
+			children = (
+				5699700F2B7A023B00F19046 /* SearchView.swift */,
+				569970162B7A032900F19046 /* SearchView.storyboard */,
+				5699700C2B7A023B00F19046 /* SearchPresenter.swift */,
+				5699700E2B7A023B00F19046 /* SearchInteractor.swift */,
+				569970102B7A023B00F19046 /* SearchEntity.swift */,
+				5699700D2B7A023B00F19046 /* SearchRouter.swift */,
+			);
+			path = Search;
 			sourceTree = "<group>";
 		};
 		56BB54D22B6394A200EEEA2C /* View */ = {
@@ -633,6 +659,7 @@
 				566055712B78E3A0004615B3 /* LocationDetailView.storyboard in Resources */,
 				56BB54D72B6394DE00EEEA2C /* CharacterCollectionViewCell.xib in Resources */,
 				5634B5EC2B63720400382506 /* MainTabbarView.storyboard in Resources */,
+				569970172B7A032900F19046 /* SearchView.storyboard in Resources */,
 				567B81142B6271C8005F676D /* LaunchScreen.storyboard in Resources */,
 				566055502B733CAE004615B3 /* EpisodeDetailView.storyboard in Resources */,
 				561FD1962B70C68500D2B5E0 /* EpisodeCollectionViewCell.xib in Resources */,
@@ -693,6 +720,7 @@
 				56BB54DD2B63B00F00EEEA2C /* ApiManager.swift in Sources */,
 				5660554C2B733408004615B3 /* EpisodeDetailEntity.swift in Sources */,
 				5634B5C22B6368B400382506 /* SettingScreenInteractor.swift in Sources */,
+				569970122B7A023B00F19046 /* SearchRouter.swift in Sources */,
 				5634B5CD2B6368C200382506 /* LocationScreenView.swift in Sources */,
 				5634B5C02B6368B400382506 /* SettingScreenPresenter.swift in Sources */,
 				5634B5B22B63674500382506 /* CharacterScreenRouter.swift in Sources */,
@@ -723,6 +751,7 @@
 				5634B5CB2B6368C200382506 /* LocationScreenRouter.swift in Sources */,
 				56E4661F2B6E777800BB9EFD /* RMFooterLoadingCollectionReusableView.swift in Sources */,
 				5660556E2B78E392004615B3 /* LocationDetailView.swift in Sources */,
+				569970132B7A023B00F19046 /* SearchInteractor.swift in Sources */,
 				569970072B79BCAC00F19046 /* SingleSettingTableViewCell.swift in Sources */,
 				5634B5D72B6368CF00382506 /* EpisodeScreenView.swift in Sources */,
 				567B81262B6272FA005F676D /* MainTabbarPresenter.swift in Sources */,
@@ -734,10 +763,12 @@
 				5634B5C12B6368B400382506 /* SettingScreenRouter.swift in Sources */,
 				5634B5C32B6368B400382506 /* SettingScreenView.swift in Sources */,
 				56E466172B6CE66500BB9EFD /* CharacterDetailRouter.swift in Sources */,
+				569970152B7A023B00F19046 /* SearchEntity.swift in Sources */,
 				5634B5EE2B63723200382506 /* MainTabbarView.swift in Sources */,
 				5660554B2B733408004615B3 /* EpisodeDetailView.swift in Sources */,
 				562FA87B2B71DB800079E3A1 /* CharacterInfoCollectionViewCell.swift in Sources */,
 				5634B5CA2B6368C200382506 /* LocationScreenPresenter.swift in Sources */,
+				569970112B7A023B00F19046 /* SearchPresenter.swift in Sources */,
 				567B81282B627310005F676D /* MainTabbarInteractor.swift in Sources */,
 				56E4660F2B6CC4A200BB9EFD /* RMConstants.swift in Sources */,
 				5634B5B42B63674500382506 /* CharacterScreenView.swift in Sources */,
@@ -747,6 +778,7 @@
 				5634B5B12B63674500382506 /* CharacterScreenPresenter.swift in Sources */,
 				566055552B75124A004615B3 /* LocationTableViewCell.swift in Sources */,
 				5634B5D52B6368CF00382506 /* EpisodeScreenRouter.swift in Sources */,
+				569970142B7A023B00F19046 /* SearchView.swift in Sources */,
 				5660554A2B733408004615B3 /* EpisodeDetailInteractor.swift in Sources */,
 				566055492B733408004615B3 /* EpisodeDetailRouter.swift in Sources */,
 				566055482B733408004615B3 /* EpisodeDetailPresenter.swift in Sources */,

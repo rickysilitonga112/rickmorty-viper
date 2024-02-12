@@ -55,8 +55,6 @@ class CharacterDetailView: UIViewController {
                     }).disposed(by: bag)
             }
         }
-        
-        print(String(describing: episodes.count))
     }
     
     private func setupCollectionView() {

@@ -32,6 +32,8 @@ class CharacterDetailEpisodeCollectionViewCell: UICollectionViewCell {
         contentView.layer.cornerRadius = 8
         contentView.layer.borderColor = UIColor.blue.cgColor
         
+        nameLabel.numberOfLines = 0
+        
         airDateLabel.directionalLayoutMargins = NSDirectionalEdgeInsets(top: 0, leading: 0, bottom: 4, trailing: 0)
     }
     
@@ -41,8 +43,8 @@ class CharacterDetailEpisodeCollectionViewCell: UICollectionViewCell {
     }
     
     public func configure(with episode: Episode) {
-        seasonLabel.text = episode.episode
-        nameLabel.text = "Episode \(episode.name)"
+        seasonLabel.text = "Episode \(episode.episode)"
+        nameLabel.text = episode.name
         airDateLabel.text = "Aired on \(episode.air_date)"
     }
     

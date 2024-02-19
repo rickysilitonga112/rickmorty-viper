@@ -30,4 +30,9 @@ class LocationScreenPresenter: BasePresenter {
         router.navigateToLocationDetail(from: navigation, with: data)
     }
     
+    func navigateToSearch(from navigation: UINavigationController,
+                          with data: SearchType) {
+        router.navigateToSearch(from: navigation, with: data)
+    }
+    
 }

@@ -55,6 +55,9 @@ class LocationScreenView: UIViewController {
         spinner.style = .large
         
         setupTableView()
+        
+        // bar button item - search
+        navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .search, target: self, action: #selector(didTapSearch))
     }
     
     private func setupTableView() {
@@ -97,6 +100,16 @@ class LocationScreenView: UIViewController {
                 fatalError("Error fetch more characters with error \(error.localizedDescription)..")
             }).disposed(by: bag)
         
+    }
+    
+    @objc
+    private func didTapSearch() {
+        guard let presenter = presenter,
+              let navigation = navigationController else {
+            return
+        }
+        let searchType = SearchType.location
+        presenter.navigateToSearch(from: navigation, with: searchType)
     }
 }
 

@@ -23,8 +23,14 @@ class LocationScreenRouter {
     func navigateToLocationDetail(from navigation: UINavigationController,
                                   with data: Location) {
      
-        let locationDetailVC = LocationDetailRouter().showView(with: data)
-        locationDetailVC.navigationItem.largeTitleDisplayMode = .never
-        navigation.pushViewController(locationDetailVC, animated: true)   
+        let nextVC = LocationDetailRouter().showView(with: data)
+        nextVC.navigationItem.largeTitleDisplayMode = .never
+        navigation.pushViewController(nextVC, animated: true)   
+    }
+    
+    func navigateToSearch(from navigation: UINavigationController,
+                          with data: SearchType) {
+        let nextVC = SearchRouter().showView(with: data)
+        navigation.pushViewController(nextVC, animated: true)
     }
 }

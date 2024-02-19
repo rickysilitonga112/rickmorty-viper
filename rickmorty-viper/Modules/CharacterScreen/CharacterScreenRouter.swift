@@ -18,8 +18,14 @@ class CharacterScreenRouter {
     
     func navigateToDetailCharacter(from navigation: UINavigationController,
                                    with data: Character) {
-        let characterDetailView = CharacterDetailRouter().showView(with: data)
+        let nextVC = CharacterDetailRouter().showView(with: data)
         
-        navigation.pushViewController(characterDetailView, animated: true)
+        navigation.pushViewController(nextVC, animated: true)
+    }
+    
+    func navigateToSearch(from navigation: UINavigationController, 
+                          with data: SearchType) {
+        let nextVC = SearchRouter().showView(with: data)
+        navigation.pushViewController(nextVC, animated: true)
     }
 }

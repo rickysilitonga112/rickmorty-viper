@@ -16,7 +16,7 @@ class CharacterScreenView: UIViewController {
     
     private var presenter: CharacterScreenPresenter?
     private var isLoadingMoreCharacters = false
-    public var apiInfo: CharacterEntity.Info? = nil
+    
     private var characters: [Character] = [] {
         didSet {
             spinner.stopAnimating()
@@ -29,6 +29,7 @@ class CharacterScreenView: UIViewController {
         }
     }
     
+    public var apiInfo: CharacterEntity.Info? = nil
 //    private var charactersList = PublishSubject<[Character]>()
     public var isShowSpinner: Bool {
         return apiInfo?.next != nil
@@ -68,6 +69,8 @@ class CharacterScreenView: UIViewController {
         spinner.style = .large
         spinner.hidesWhenStopped = true
         spinner.startAnimating()
+        
+        navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .search, target: self, action: #selector(didTapSearch))
     }
     
     private func setupCollectionView() {
@@ -116,6 +119,16 @@ class CharacterScreenView: UIViewController {
             }, onError: { error in
                 fatalError("Error fetch more characters with error \(error.localizedDescription)..")
             }).disposed(by: bag)
+    }
+    
+    @objc
+    private func didTapSearch() {
+        guard let presenter = presenter,
+              let navigation = navigationController else {
+            return
+        }
+        let searchType = SearchType.character
+        presenter.navigateToSearch(from: navigation, with: searchType)
     }
 }
 

@@ -29,4 +29,9 @@ class CharacterScreenPresenter: BasePresenter {
                                    with data: Character) {
         router.navigateToDetailCharacter(from: navigation, with: data)
     }
+    
+    func navigateToSearch(from navigation: UINavigationController, 
+                          with data: SearchType) {
+        router.navigateToSearch(from: navigation, with: data)
+    }
 }

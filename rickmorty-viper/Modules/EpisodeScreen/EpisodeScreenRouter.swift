@@ -23,7 +23,13 @@ class EpisodeScreenRouter {
     
     func navigateToDetailEpisode(from navigation: UINavigationController,
                                  with data: Episode) {
-        let episodeDetailView = EpisodeDetailRouter().showView(with: data)
-        navigation.pushViewController(episodeDetailView, animated: true)
+        let nextVC = EpisodeDetailRouter().showView(with: data)
+        navigation.pushViewController(nextVC, animated: true)
+    }
+    
+    func navigateToSearch(from navigation: UINavigationController,
+                          with data: SearchType) {
+        let nextVC = SearchRouter().showView(with: data)
+        navigation.pushViewController(nextVC, animated: true)
     }
 }

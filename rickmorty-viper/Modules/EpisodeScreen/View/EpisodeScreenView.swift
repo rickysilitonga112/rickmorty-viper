@@ -54,6 +54,9 @@ class EpisodeScreenView: UIViewController {
         spinner.style = .large
         spinner.hidesWhenStopped = true
         spinner.startAnimating()
+        
+        // bar button item - search
+        navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .search, target: self, action: #selector(didTapSearch))
     }
     
     private func setupCollectionView() {
@@ -114,6 +117,16 @@ class EpisodeScreenView: UIViewController {
             } onError: { error in
                 print("Error fetch more episodes with error\(String(describing: error.localizedDescription))")
             }.disposed(by: bag)
+    }
+    
+    @objc
+    private func didTapSearch() {
+        guard let presenter = presenter,
+              let navigation = navigationController else {
+            return
+        }
+        let searchType = SearchType.episode
+        presenter.navigateToSearch(from: navigation, with: searchType)
     }
 }
 
